@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects & Impact — OEVI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+<body>
+
+  <div class="reading-progress" id="readingProgress"></div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">OE<span>VI</span></a>
+        <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+        <div class="nav-menu" id="navMenu">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="programs.html" class="nav-link">Programs</a></li>
+            <li><a href="impact.html" class="nav-link active">Impact</a></li>
+            <li><a href="news.html" class="nav-link">News</a></li>
+            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+          <div class="nav-actions">
+            <a href="donate.html" class="btn btn-donate"><i class="fas fa-heart"></i> Donate</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero" style="--hero-bg: url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1920&q=80');">
+    <div class="container">
+      <div class="breadcrumb-custom" data-aos="fade-down">
+        <a href="index.html">Home</a>
+        <i class="fas fa-chevron-right"></i>
+        <span>Impact</span>
+      </div>
+      <h1 data-aos="fade-up">Measurable <span>Impact</span></h1>
+      <p class="lead" data-aos="fade-up" data-aos-delay="100">Real outcomes, real stories, real change — backed by data and driven by community.</p>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="section section-stats">
+    <div class="stats-bg" style="background-image: url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1920&q=80');"></div>
+    <div class="stats-overlay"></div>
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card" data-aos="zoom-in"><div class="stat-icon"><i class="fas fa-users"></i></div><div class="stat-number" data-count="250000">0</div><div class="stat-label">Lives Impacted</div></div>
+        <div class="stat-card" data-aos="zoom-in" data-aos-delay="100"><div class="stat-icon"><i class="fas fa-project-diagram"></i></div><div class="stat-number" data-count="120">0</div><div class="stat-label">Active Projects</div></div>
+        <div class="stat-card" data-aos="zoom-in" data-aos-delay="200"><div class="stat-icon"><i class="fas fa-globe-africa"></i></div><div class="stat-number" data-count="18">0</div><div class="stat-label">Countries</div></div>
+        <div class="stat-card" data-aos="zoom-in" data-aos-delay="300"><div class="stat-icon"><i class="fas fa-handshake"></i></div><div class="stat-number" data-count="450">0</div><div class="stat-label">Partners</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Progress -->
+  <section class="section">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-6" data-aos="fade-right">
+          <span class="section-tag">2026 Goals</span>
+          <h2>Progress Toward Our Targets</h2>
+          <p style="color:var(--gray-600); margin-bottom:2rem;">Transparent tracking of our annual commitments.</p>
+          <div class="progress-item">
+            <div class="progress-header"><span>Healthcare Access</span><span>87%</span></div>
+            <div class="progress-bar-wrap"><div class="progress-bar-fill" data-progress="87"></div></div>
+          </div>
+          <div class="progress-item">
+            <div class="progress-header"><span>Education Enrollment</span><span>72%</span></div>
+            <div class="progress-bar-wrap"><div class="progress-bar-fill" data-progress="72"></div></div>
+          </div>
+          <div class="progress-item">
+            <div class="progress-header"><span>Clean Water Access</span><span>64%</span></div>
+            <div class="progress-bar-wrap"><div class="progress-bar-fill" data-progress="64"></div></div>
+          </div>
+          <div class="progress-item">
+            <div class="progress-header"><span>Women Empowerment</span><span>91%</span></div>
+            <div class="progress-bar-wrap"><div class="progress-bar-fill" data-progress="91"></div></div>
+          </div>
+        </div>
+        <div class="col-6" data-aos="fade-left">
+          <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=900&q=80" class="rounded-4 shadow-lg" alt="" style="width:100%;" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="section-header text-center" data-aos="fade-up">
+        <span class="section-tag">Featured Projects</span>
+        <h2 class="section-title">Where We're Making a Difference</h2>
+      </div>
+      <div class="filter-bar" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="health">Health</button>
+        <button class="filter-btn" data-filter="education">Education</button>
+        <button class="filter-btn" data-filter="agriculture">Agriculture</button>
+        <button class="filter-btn" data-filter="environment">Environment</button>
+      </div>
+      <div class="row g-4">
+        <div class="col-6" data-category="health" data-aos="fade-up">
+          <div class="article-card">
+            <div class="article-image">
+              <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80" alt="" />
+              <span class="article-category">Health</span>
+            </div>
+            <div class="article-body">
+              <h4>Mobile Clinics — Rural Kenya</h4>
+              <p>Bringing healthcare to 15 remote villages with mobile medical units.</p>
+              <div class="article-footer">
+                <div class="article-meta"><span><i class="fas fa-users"></i> 12,400 beneficiaries</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6" data-category="education" data-aos="fade-up" data-aos-delay="100">
+          <div class="article-card">
+            <div class="article-image">
+              <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80" alt="" />
+              <span class="article-category">Education</span>
+            </div>
+            <div class="article-body">
+              <h4>Girls' Scholarship — Uganda</h4>
+              <p>Full scholarships for 800 girls to complete secondary education.</p>
+              <div class="article-footer">
+                <div class="article-meta"><span><i class="fas fa-users"></i> 800 scholars</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6" data-category="agriculture" data-aos="fade-up" data-aos-delay="200">
+          <div class="article-card">
+            <div class="article-image">
+              <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80" alt="" />
+              <span class="article-category">Agriculture</span>
+            </div>
+            <div class="article-body">
+              <h4>Cooperative Farming — Tanzania</h4>
+              <p>Training 2,000 smallholder farmers in sustainable techniques.</p>
+              <div class="article-footer">
+                <div class="article-meta"><span><i class="fas fa-users"></i> 2,000 farmers</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6" data-category="environment" data-aos="fade-up" data-aos-delay="300">
+          <div class="article-card">
+            <div class="article-image">
+              <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&q=80" alt="" />
+              <span class="article-category">Environment</span>
+            </div>
+            <div class="article-body">
+              <h4>Reforestation — Rwanda</h4>
+              <p>Planting 200,000 native trees to restore degraded landscapes.</p>
+              <div class="article-footer">
+                <div class="article-meta"><span><i class="fas fa-tree"></i> 200,000 trees</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header text-center" data-aos="fade-up">
+        <span class="section-tag">Geographic Reach</span>
+        <h2 class="section-title">Where We Work</h2>
+      </div>
+      <div class="map-wrapper" data-aos="fade-up">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-20,-35,55,40&layer=mapnik" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="section-header text-center" data-aos="fade-up">
+        <span class="section-tag">Success Stories</span>
+        <h2 class="section-title">Voices of Impact</h2>
+      </div>
+      <div class="row g-4 mt-3">
+        <div class="col-6" data-aos="fade-up">
+          <div class="impact-card">
+            <div class="impact-icon"><i class="fas fa-quote-left"></i></div>
+            <h4>Amara's Journey</h4>
+            <p>"OEVI's mobile clinic saved my daughter's life. Today she's healthy and thriving."</p>
+            <div class="d-flex align-items-center gap-3 mt-4">
+              <img src="https://i.pravatar.cc/60?img=47" style="width:48px; height:48px; border-radius:50%;" alt="" />
+              <div><strong>Amara K.</strong><br/><small style="color:var(--gray-500);">Mother, Kenya</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="impact-card">
+            <div class="impact-icon"><i class="fas fa-quote-left"></i></div>
+            <h4>David's Story</h4>
+            <p>"The scholarship changed my family's future. I'm the first university graduate."</p>
+            <div class="d-flex align-items-center gap-3 mt-4">
+              <img src="https://i.pravatar.cc/60?img=12" style="width:48px; height:48px; border-radius:50%;" alt="" />
+              <div><strong>David M.</strong><br/><small style="color:var(--gray-500);">Scholar, Uganda</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="impact-card">
+            <div class="impact-icon"><i class="fas fa-quote-left"></i></div>
+            <h4>Fatima's Business</h4>
+            <p>"With OEVI's microloan, I started a tailoring shop. Now I employ 4 women."</p>
+            <div class="d-flex align-items-center gap-3 mt-4">
+              <img src="https://i.pravatar.cc/60?img=45" style="width:48px; height:48px; border-radius:50%;" alt="" />
+              <div><strong>Fatima A.</strong><br/><small style="color:var(--gray-500);">Entrepreneur, Tanzania</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-cta">
+    <div class="cta-bg" style="background-image: url('https://images.unsplash.com/photo-1593113598332-cd288d649433?w=1920&q=80');"></div>
+    <div class="cta-overlay"></div>
+    <div class="container">
+      <div class="cta-content" data-aos="zoom-in">
+        <h2>Be Part of the Impact</h2>
+        <p>Your support makes these stories possible.</p>
+        <div class="cta-buttons">
+          <a href="donate.html" class="btn btn-accent btn-lg">Donate <i class="fas fa-arrow-right"></i></a>
+          <a href="get-involved.html" class="btn btn-outline-light btn-lg">Get Involved</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="footer-logo">OE<span>VI</span></a>
+          <p>Empowering communities through sustainable programs.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="impact.html">Impact</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="programs.html#health">Healthcare</a></li>
+            <li><a href="programs.html#education">Education</a></li>
+            <li><a href="programs.html#agriculture">Agriculture</a></li>
+            <li><a href="programs.html#environment">Environment</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get In Touch</h4>
+          <ul class="footer-contact list-unstyled">
+            <li><i class="fas fa-map-marker-alt"></i><span>123 Community Ave, Nairobi</span></li>
+            <li><i class="fas fa-phone"></i><span>+254 700 123 456</span></li>
+            <li><i class="fas fa-envelope"></i><span>hello@oevi.org</span></li>
+          </ul>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email" required />
+            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 OEVI. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

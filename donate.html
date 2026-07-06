@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donate — OEVI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+<body>
+
+  <div class="reading-progress" id="readingProgress"></div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">OE<span>VI</span></a>
+        <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+        <div class="nav-menu" id="navMenu">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="programs.html" class="nav-link">Programs</a></li>
+            <li><a href="impact.html" class="nav-link">Impact</a></li>
+            <li><a href="news.html" class="nav-link">News</a></li>
+            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+          <div class="nav-actions">
+            <a href="donate.html" class="btn btn-donate"><i class="fas fa-heart"></i> Donate</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero" style="--hero-bg: url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=1920&q=80');">
+    <div class="container">
+      <div class="breadcrumb-custom" data-aos="fade-down">
+        <a href="index.html">Home</a>
+        <i class="fas fa-chevron-right"></i>
+        <span>Donate</span>
+      </div>
+      <h1 data-aos="fade-up">Give <span>Hope</span></h1>
+      <p class="lead" data-aos="fade-up" data-aos-delay="100">Every dollar you give directly transforms lives. 92¢ of every dollar goes to programs.</p>
+    </div>
+  </section>
+
+  <!-- Donation Form -->
+  <section class="section">
+    <div class="container">
+      <div class="row g-5 align-items-start">
+        <div class="col-6" data-aos="fade-right">
+          <span class="section-tag">Make a Donation</span>
+          <h2>Choose Your Impact</h2>
+
+          <div class="d-flex gap-2 mb-4 mt-3">
+            <button class="btn btn-primary donate-freq active">One-Time</button>
+            <button class="btn btn-outline-primary donate-freq">Monthly</button>
+          </div>
+
+          <div class="donation-amounts">
+            <div class="donation-amount" data-amount="25">$25</div>
+            <div class="donation-amount selected" data-amount="50">$50</div>
+            <div class="donation-amount" data-amount="100">$100</div>
+            <div class="donation-amount" data-amount="250">$250</div>
+            <div class="donation-amount" data-amount="500">$500</div>
+            <div class="donation-amount" data-amount="custom">Custom</div>
+          </div>
+
+          <form onsubmit="event.preventDefault(); alert('Thank you for your generous donation!');">
+            <div class="form-floating-custom"><input type="text" placeholder=" " required /><label>Full Name</label></div>
+            <div class="form-floating-custom"><input type="email" placeholder=" " required /><label>Email</label></div>
+            <div class="form-floating-custom">
+              <select>
+                <option>Where most needed</option>
+                <option>Healthcare</option>
+                <option>Education</option>
+                <option>Agriculture</option>
+                <option>Environment</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-accent w-100" style="padding:18px;">Donate $50 Now <i class="fas fa-heart"></i></button>
+          </form>
+        </div>
+
+        <div class="col-6" data-aos="fade-left">
+          <div class="impact-card mb-4">
+            <h4>Your Impact</h4>
+            <div id="impactText">
+              <p><strong>$50</strong> provides clean water to a family for one year.</p>
+            </div>
+          </div>
+
+          <div class="impact-card">
+            <h4>2026 Campaign Goal</h4>
+            <p>Raise $2M to expand healthcare access to 5 new countries.</p>
+            <div class="progress-item mt-3" style="margin-bottom:0;">
+              <div class="progress-header"><span>$1.4M raised</span><span>70%</span></div>
+              <div class="progress-bar-wrap"><div class="progress-bar-fill" data-progress="70"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Cards -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="section-header text-center" data-aos="fade-up">
+        <span class="section-tag">What Your Gift Does</span>
+        <h2 class="section-title">Donation Impact</h2>
+      </div>
+      <div class="row g-4 mt-3">
+        <div class="col-6" data-aos="fade-up">
+          <div class="impact-card text-center">
+            <div class="impact-icon" style="margin:0 auto 1rem;"><i class="fas fa-tint"></i></div>
+            <div class="impact-stat">$25</div>
+            <p>Clean water for a family for 6 months</p>
+          </div>
+        </div>
+        <div class="col-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="impact-card text-center">
+            <div class="impact-icon" style="margin:0 auto 1rem;"><i class="fas fa-book"></i></div>
+            <div class="impact-stat">$50</div>
+            <p>School supplies for 5 children for a year</p>
+          </div>
+        </div>
+        <div class="col-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="impact-card text-center">
+            <div class="impact-icon" style="margin:0 auto 1rem;"><i class="fas fa-heartbeat"></i></div>
+            <div class="impact-stat">$100</div>
+            <p>Medical care for 10 patients</p>
+          </div>
+        </div>
+        <div class="col-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="impact-card text-center">
+            <div class="impact-icon" style="margin:0 auto 1rem;"><i class="fas fa-graduation-cap"></i></div>
+            <div class="impact-stat">$250</div>
+            <p>Full scholarship for one girl for a year</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header text-center" data-aos="fade-up">
+        <span class="section-tag">FAQ</span>
+        <h2 class="section-title">Donation Questions</h2>
+      </div>
+      <div class="mt-4" style="max-width:800px; margin-left:auto; margin-right:auto;">
+        <div class="faq-item" data-aos="fade-up">
+          <button class="faq-question">Is my donation tax-deductible? <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer"><p>Yes. OEVI is a registered 501(c)(3) organization. You'll receive a tax receipt via email.</p></div>
+        </div>
+        <div class="faq-item" data-aos="fade-up">
+          <button class="faq-question">How is my donation used? <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer"><p>92¢ of every dollar goes directly to programs. 5% to administration, 3% to fundraising.</p></div>
+        </div>
+        <div class="faq-item" data-aos="fade-up">
+          <button class="faq-question">Is the donation form secure? <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer"><p>Absolutely. We use bank-level 256-bit SSL encryption and PCI-compliant payment processors.</p></div>
+        </div>
+        <div class="faq-item" data-aos="fade-up">
+          <button class="faq-question">Can I cancel my monthly donation? <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer"><p>Yes, you can cancel or modify your monthly donation at any time.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="footer-logo">OE<span>VI</span></a>
+          <p>Empowering communities through sustainable programs.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="impact.html">Impact</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="programs.html#health">Healthcare</a></li>
+            <li><a href="programs.html#education">Education</a></li>
+            <li><a href="programs.html#agriculture">Agriculture</a></li>
+            <li><a href="programs.html#environment">Environment</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get In Touch</h4>
+          <ul class="footer-contact list-unstyled">
+            <li><i class="fas fa-map-marker-alt"></i><span>123 Community Ave, Nairobi</span></li>
+            <li><i class="fas fa-phone"></i><span>+254 700 123 456</span></li>
+            <li><i class="fas fa-envelope"></i><span>hello@oevi.org</span></li>
+          </ul>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email" required />
+            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 OEVI. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

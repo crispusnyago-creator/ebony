@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OEVI — Empowering Communities, Transforming Lives</title>
+  <meta name="description" content="OEVI is an international NGO dedicated to healthcare, education, agriculture, and community development across Africa." />
+  
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+<body>
+
+  <!-- Reading Progress -->
+  <div class="reading-progress" id="readingProgress"></div>
+
+  <!-- Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">OE<span>VI</span></a>
+        
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-menu" id="navMenu">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link active">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li class="dropdown">
+              <a href="programs.html" class="nav-link">Programs <i class="fas fa-chevron-down"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="programs.html#health">Healthcare</a></li>
+                <li><a href="programs.html#education">Education</a></li>
+                <li><a href="programs.html#agriculture">Agriculture</a></li>
+                <li><a href="programs.html#environment">Environment</a></li>
+                <li><a href="programs.html#youth">Youth</a></li>
+              </ul>
+            </li>
+            <li><a href="impact.html" class="nav-link">Impact</a></li>
+            <li><a href="news.html" class="nav-link">News</a></li>
+            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+          
+          <div class="nav-actions">
+            <a href="#" class="search-btn" aria-label="Search"><i class="fas fa-search"></i></a>
+            <a href="donate.html" class="btn btn-donate">
+              <i class="fas fa-heart"></i> Donate
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="swiper heroSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1920&q=80');"></div>
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <div class="container">
+              <span class="hero-tag" data-aos="fade-down">
+                <span class="pulse-dot"></span>
+                Empowering Communities Since 2005
+              </span>
+              <h1 data-aos="fade-up" data-aos-delay="100">
+                Transforming Lives.<br>
+                <span class="text-gradient">Building Futures.</span>
+              </h1>
+              <p data-aos="fade-up" data-aos-delay="200">
+                OEVI delivers sustainable healthcare, education, and community development programs across Africa — creating lasting change for generations to come.
+              </p>
+              <div class="hero-cta" data-aos="fade-up" data-aos-delay="300">
+                <a href="#programs" class="btn btn-primary btn-lg">
+                  Our Programs <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#impact" class="btn btn-outline-light btn-lg">
+                  <i class="fas fa-play-circle"></i> See Our Impact
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="swiper-slide">
+          <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=1920&q=80');"></div>
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <div class="container">
+              <span class="hero-tag" data-aos="fade-down">
+                <span class="pulse-dot"></span>
+                Education For All
+              </span>
+              <h1 data-aos="fade-up" data-aos-delay="100">
+                Empowering Through<br>
+                <span class="text-gradient">Knowledge & Skills</span>
+              </h1>
+              <p data-aos="fade-up" data-aos-delay="200">
+                Building schools, training teachers, and providing scholarships to unlock every child's potential across 18 countries.
+              </p>
+              <div class="hero-cta" data-aos="fade-up" data-aos-delay="300">
+                <a href="programs.html#education" class="btn btn-primary btn-lg">
+                  Education Programs <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="donate.html" class="btn btn-outline-light btn-lg">
+                  Support Education
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="swiper-slide">
+          <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1593113598332-cd288d649433?w=1920&q=80');"></div>
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <div class="container">
+              <span class="hero-tag" data-aos="fade-down">
+                <span class="pulse-dot"></span>
+                Healthcare Access
+              </span>
+              <h1 data-aos="fade-up" data-aos-delay="100">
+                Bringing Healthcare<br>
+                <span class="text-gradient">To Every Community</span>
+              </h1>
+              <p data-aos="fade-up" data-aos-delay="200">
+                Mobile clinics, maternal care, and disease prevention reaching the most remote villages across Africa.
+              </p>
+              <div class="hero-cta" data-aos="fade-up" data-aos-delay="300">
+                <a href="programs.html#health" class="btn btn-primary btn-lg">
+                  Healthcare Initiatives <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="get-involved.html" class="btn btn-outline-light btn-lg">
+                  Volunteer With Us
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="hero-pagination"></div>
+      <div class="hero-scrollbar">
+        <div class="hero-scrollbar-progress"></div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span>Scroll to explore</span>
+      <div class="scroll-line">
+        <div class="scroll-dot"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission/Vision/Values -->
+  <section class="section section-mvv" id="mvv">
+    <div class="container">
+      <div class="section-header text-center" data-aos="fade-up">
+        <span class="section-tag">Who We Are</span>
+        <h2 class="section-title">Guided by Purpose, Driven by Impact</h2>
+        <p class="section-subtitle">Our mission is rooted in dignity, our vision in possibility, and our values in service.</p>
+      </div>
+
+      <div class="mvv-grid">
+        <div class="mvv-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="mvv-icon">
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <h3>Our Mission</h3>
+          <p>To empower vulnerable communities through sustainable programs in health, education, agriculture, and social justice — creating self-reliant futures.</p>
+          <a href="about.html" class="link-arrow">Learn more <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="mvv-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="mvv-icon">
+            <i class="fas fa-eye"></i>
+          </div>
+          <h3>Our Vision</h3>
+          <p>A world where every individual — regardless of background — has access to opportunity, dignity, and the chance to thrive.</p>
+          <a href="about.html" class="link-arrow">Learn more <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="mvv-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="mvv-icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <h3>Core Values</h3>
+          <p>Integrity, compassion, transparency, community ownership, and sustainable impact guide every decision we make.</p>
+          <a href="about.html" class="link-arrow">Learn more <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs Section -->
+  <section class="section section-programs bg-light" id="programs">
+    <div class="container">
+      <div class="section-header text-center" data-aos="fade-up">
+        <span class="section-tag">What We Do</span>
+        <h2 class="section-title">Our Core Programs</h2>
+        <p class="section-subtitle">Integrated interventions designed to address the root causes of poverty and inequality.</p>
+      </div>
+
+      <div class="programs-grid">
+        <article class="program-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="program-image">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80" alt="Healthcare" loading="lazy" />
+            <div class="program-overlay"></div>
+            <div class="program-icon">
+              <i class="fas fa-heartbeat"></i>
+            </div>
+          </div>
+          <div class="program-content">
+            <h3>Healthcare</h3>
+            <p>Mobile clinics, maternal care, and disease prevention reaching remote communities.</p>
+            <ul class="program-features">
+              <li><i class="fas fa-check"></i> Mobile Clinics</li>
+              <li><i class="fas fa-check"></i> Maternal Health</li>
+              <li><i class="fas fa-check"></i> Disease Prevention</li>
+            </ul>
+            <a href="programs.html#health" class="btn btn-outline-primary">
+              Learn More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="program-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="program-image">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80" alt="Education" loading="lazy" />
+            <div class="program-overlay"></div>
+            <div class="program-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+          </div>
+          <div class="program-content">
+            <h3>Education</h3>
+            <p>Scholarships, school construction, and teacher training for quality learning.</p>
+            <ul class="program-features">
+              <li><i class="fas fa-check"></i> Scholarships</li>
+              <li><i class="fas fa-check"></i> School Building</li>
+              <li><i class="fas fa-check"></i> Teacher Training</li>
+            </ul>
+            <a href="programs.html#education" class="btn btn-outline-primary">
+              Learn More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="program-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="program-image">
+            <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80" alt="Agriculture" loading="lazy" />
+            <div class="program-overlay"></div>
+            <div class="program-icon">
+              <i class="fas fa-seedling"></i>
+            </div>
+          </div>
+          <div class="program-content">
+            <h3>Agriculture</h3>
+            <p>Sustainable farming training, seed banks, and market access for rural farmers.</p>
+            <ul class="program-features">
+              <li><i class="fas fa-check"></i> Sustainable Farming</li>
+              <li><i class="fas fa-check"></i> Seed Banks</li>
+              <li><i class="fas fa-check"></i> Market Access</li>
+            </ul>
+            <a href="programs.html#agriculture" class="btn btn-outline-primary">
+              Learn More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="program-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="program-image">
+            <img src="https://images.unsplash.com/photo-1594708767771-a7502209ff51?w=800&q=80" alt="Women Empowerment" loading="lazy" />
+            <div class="program-overlay"></div>
+            <div class="program-icon">
+              <i class="fas fa-venus"></i>
+            </div>
+          </div>
+          <div class="program-content">
+            <h3>Women Empowerment</h3>
+            <p>Microfinance, skills training, and leadership programs for women.</p>
+            <ul class="program-features">
+              <li><i class="fas fa-check"></i> Microfinance</li>
+              <li><i class="fas fa-check"></i> Skills Training</li>
+              <li><i class="fas fa-check"></i> Leadership</li>
+            </ul>
+            <a href="programs.html" class="btn btn-outline-primary">
+              Learn More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="program-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="program-image">
+            <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=800&q=80" alt="Youth" loading="lazy" />
+            <div class="program-overlay"></div>
+            <div class="program-icon">
+              <i class="fas fa-users"></i>
+            </div>
+          </div>
+          <div class="program-content">
+            <h3>Youth Development</h3>
+            <p>Vocational training, mentorship, and entrepreneurship for young people.</p>
+            <ul class="program-features">
+              <li><i class="fas fa-check"></i> Vocational Training</li>
+              <li><i class="fas fa-check"></i> Mentorship</li>
+              <li><i class="fas fa-check"></i> Entrepreneurship</li>
+            </ul>
+            <a href="programs.html#youth" class="btn btn-outline-primary">
+              Learn More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="program-card" data-aos="fade-up" data-aos-delay="500">
+          <div class="program-image">
+            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&q=80" alt="Environment" loading="lazy" />
+            <div class="program-overlay"></div>
+            <div class="program-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+          </div>
+          <div class="program-content">
+            <h3>Environment</h3>
+            <p>Reforestation, clean water, and climate resilience initiatives.</p>
+            <ul class="program-features">
+              <li><i class="fas fa-check"></i> Reforestation</li>
+              <li><i class="fas fa-check"></i> Clean Water</li>
+              <li><i class="fas fa-check"></i> Climate Action</li>
+            </ul>
+            <a href="programs.html#environment" class="btn btn-outline-primary">
+              Learn More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <div class="text-center mt-5" data-aos="fade-up">
+        <a href="programs.html" class="btn btn-primary btn-lg">
+          View All Programs <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Stats -->
+  <section class="section section-stats" id="impact">
+    <div class="stats-bg" style="background-image: url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1920&q=80');"></div>
+    <div class="stats-overlay"></div>
+    <div class="container">
+      <div class="section-header text-center" data-aos="fade-up">
+        <span class="section-tag text-white">Our Impact</span>
+        <h2 class="section-title text-white">Numbers That Tell Our Story</h2>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card" data-aos="zoom-in" data-aos-delay="0">
+          <div class="stat-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <div class="stat-number" data-count="250000">0</div>
+          <div class="stat-label">Lives Impacted</div>
+        </div>
+
+        <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+          <div class="stat-icon">
+            <i class="fas fa-project-diagram"></i>
+          </div>
+          <div class="stat-number" data-count="120">0</div>
+          <div class="stat-label">Active Projects</div>
+        </div>
+
+        <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+          <div class="stat-icon">
+            <i class="fas fa-globe-africa"></i>
+          </div>
+          <div class="stat-number" data-count="18">0</div>
+          <div class="stat-label">Countries Reached</div>
+        </div>
+
+        <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+          <div class="stat-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <div class="stat-number" data-count="450">0</div>
+          <div class="stat-label">Community Partners</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  <section class="section section-projects bg-light">
+    <div class="container">
+      <div class="section-header text-center" data-aos="fade-up">
+        <span class="section-tag">Featured Work</span>
+        <h2 class="section-title">Recent Projects</h2>
+        <p class="section-subtitle">Making a measurable difference across communities.</p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80" alt="Mobile Clinics" loading="lazy" />
+            <div class="project-badge">Healthcare</div>
+          </div>
+          <div class="project-content">
+            <h3>Mobile Clinics — Rural Kenya</h3>
+            <p>Bringing healthcare to 15 remote villages with mobile medical units and trained community health workers.</p>
+            <div class="project-meta">
+              <span><i class="fas fa-users"></i> 12,400 beneficiaries</span>
+              <span><i class="fas fa-map-marker-alt"></i> Kenya</span>
+            </div>
+            <a href="impact.html" class="btn-link">View Project <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80" alt="Girls Education" loading="lazy" />
+            <div class="project-badge">Education</div>
+          </div>
+          <div class="project-content">
+            <h3>Girls' Scholarship Program — Uganda</h3>
+            <p>Full scholarships for 800 girls to complete secondary education, with mentorship and career support.</p>
+            <div class="project-meta">
+              <span><i class="fas fa-users"></i> 800 scholars</span>
+              <span><i class="fas fa-map-marker-alt"></i> Uganda</span>
+            </div>
+            <a href="impact.html" class="btn-link">View Project <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="project-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-image">
+            <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80" alt="Cooperative Farming" loading="lazy" />
+            <div class="project-badge">Agriculture</div>
+          </div>
+          <div class="project-content">
+            <h3>Cooperative Farming — Tanzania</h3>
+            <p>Training 2,000 smallholder farmers in sustainable techniques and connecting them to regional markets.</p>
+            <div class="project-meta">
+              <span><i class="fas fa-users"></i> 2,000 farmers</span>
+              <span><i class="fas fa-map-marker-alt"></i> Tanzania</span>
+            </div>
+            <a href="impact.html" class="btn-link">View Project <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Preview -->
+  <section class="section section-gallery">
+    <div class="container">
+      <div class="section-header text-center" data-aos="fade-up">
+        <span class="section-tag">Visual Stories</span>
+        <h2 class="section-title">Moments of Change</h2>
+        <p class="section-subtitle">A glimpse into the lives we're transforming together.</p>
+      </div>
+
+      <div class="gallery-grid" data-aos="fade-up">
+        <div class="gallery-item gallery-item-large">
+          <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=80" alt="Community" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gallery-category">Community</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=800&q=80" alt="Education" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gallery-category">Education</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&q=80" alt="Healthcare" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gallery-category">Healthcare</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1594708767771-a7502209ff51?w=800&q=80" alt="Agriculture" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gallery-category">Agriculture</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&q=80" alt="Environment" loading="lazy" />
+          <div class="gallery-overlay">
+            <span class="gallery-category">Environment</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5" data-aos="fade-up">
+        <a href="gallery.html" class="btn btn-outline-primary btn-lg">
+          View Full Gallery <i class="fas fa-images"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section section-testimonials bg-light">
+    <div class="container">
+      <div class="section-header text-center" data-aos="fade-up">
+        <span class="section-tag">Testimonials</span>
+        <h2 class="section-title">Voices of Impact</h2>
+        <p class="section-subtitle">Hear from the communities we serve.</p>
+      </div>
+
+      <div class="swiper testimonialsSwiper" data-aos="fade-up">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-quote">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <p class="testimonial-text">OEVI's healthcare program saved my daughter's life. The mobile clinic arrived just in time. We are forever grateful.</p>
+              <div class="testimonial-author">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80" alt="Amara K." loading="lazy" />
+                <div>
+                  <h4>Amara K.</h4>
+                  <span>Community Member, Kenya</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-quote">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <p class="testimonial-text">The scholarship I received changed the trajectory of my entire family. I'm now the first university graduate in my village.</p>
+              <div class="testimonial-author">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80" alt="David M." loading="lazy" />
+                <div>
+                  <h4>David M.</h4>
+                  <span>Scholarship Recipient, Uganda</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-quote">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <p class="testimonial-text">As a partner, we've witnessed OEVI's exceptional transparency and impact. They are a model for the sector.</p>
+              <div class="testimonial-author">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&q=80" alt="Sarah L." loading="lazy" />
+                <div>
+                  <h4>Sarah L.</h4>
+                  <span>Partner Director, UNICEF</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners -->
+  <section class="section section-partners">
+    <div class="container">
+      <div class="section-header text-center" data-aos="fade-up">
+        <span class="section-tag">Partnerships</span>
+        <h2 class="section-title">Together We Rise</h2>
+        <p class="section-subtitle">Proud to work with these amazing organizations.</p>
+      </div>
+
+      <div class="partners-grid" data-aos="fade-up">
+        <div class="partner-logo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/UNICEF_logo.svg/1200px-UNICEF_logo.svg.png" alt="UNICEF" loading="lazy" />
+        </div>
+        <div class="partner-logo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/WHO_logo.svg/1200px-WHO_logo.svg.png" alt="WHO" loading="lazy" />
+        </div>
+        <div class="partner-logo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/USAID-Logo.svg/1200px-USAID-Logo.svg.png" alt="USAID" loading="lazy" />
+        </div>
+        <div class="partner-logo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/World_Bank_Group_logo.svg/1200px-World_Bank_Group_logo.svg.png" alt="World Bank" loading="lazy" />
+        </div>
+        <div class="partner-logo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Gates_Foundation_Logo.svg/1200px-Gates_Foundation_Logo.svg.png" alt="Gates Foundation" loading="lazy" />
+        </div>
+        <div class="partner-logo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/European_Union_logo.svg/1200px-European_Union_logo.svg.png" alt="EU Aid" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section section-cta">
+    <div class="cta-bg" style="background-image: url('https://images.unsplash.com/photo-1593113598332-cd288d649433?w=1920&q=80');"></div>
+    <div class="cta-overlay"></div>
+    <div class="container">
+      <div class="cta-content" data-aos="zoom-in">
+        <h2>Join Us In Building A Better Tomorrow</h2>
+        <p>Your support — whether time, talent, or treasure — directly transforms lives across Africa.</p>
+        <div class="cta-buttons">
+          <a href="donate.html" class="btn btn-accent btn-lg">
+            <i class="fas fa-heart"></i> Donate Now
+          </a>
+          <a href="get-involved.html" class="btn btn-outline-light btn-lg">
+            <i class="fas fa-hand-holding-heart"></i> Volunteer
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="footer-logo">OE<span>VI</span></a>
+          <p>Empowering communities through sustainable programs in health, education, and development — creating lasting change across Africa.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="impact.html">Our Impact</a></li>
+            <li><a href="news.html">News & Updates</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="programs.html#health">Healthcare</a></li>
+            <li><a href="programs.html#education">Education</a></li>
+            <li><a href="programs.html#agriculture">Agriculture</a></li>
+            <li><a href="programs.html#environment">Environment</a></li>
+            <li><a href="programs.html#youth">Youth Empowerment</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Get In Touch</h4>
+          <ul class="footer-contact">
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <span>123 Community Ave, Nairobi, Kenya</span>
+            </li>
+            <li>
+              <i class="fas fa-phone"></i>
+              <span>+254 700 123 456</span>
+            </li>
+            <li>
+              <i class="fas fa-envelope"></i>
+              <span>hello@oevi.org</span>
+            </li>
+          </ul>
+          
+          <form class="newsletter-form" onsubmit="event.preventDefault();">
+            <input type="email" placeholder="Your email address" required />
+            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 OEVI. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/components.js"></script>
+</body>
+</html>

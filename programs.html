@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Programs — OEVI Digital Management System</title>
+  <meta name="description" content="Explore all 20 OEVI programs. Apply online with your OEVI Digital ID." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  
+  <style>
+    /* ----- RESET & BASE ----- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #fafcfa; color: #1a2a2a; line-height: 1.6; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    .row { display: flex; flex-wrap: wrap; margin: 0 -10px; }
+    .col-3 { width: 25%; padding: 0 10px; }
+    .col-4 { width: 33.333%; padding: 0 10px; }
+    @media (max-width: 992px) { .col-4 { width: 50%; } }
+    @media (max-width: 768px) { .col-4 { width: 100%; } .col-3 { width: 50%; } }
+    @media (max-width: 480px) { .col-3 { width: 100%; } }
+
+    /* ----- reading progress ----- */
+    .reading-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #4caf50, #ff8f00); z-index: 9999; width: 0%; transition: width 0.15s ease; }
+
+    /* ----- HEADER (clean white, orange hover) ----- */
+    .site-header { position: sticky; top: 0; z-index: 1000; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); box-shadow: 0 1px 20px rgba(0,0,0,0.02); border-bottom: 1px solid rgba(0,0,0,0.04); }
+    .navbar { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; flex-wrap: wrap; }
+    .logo { font-family: 'Poppins', sans-serif; font-size: 1.6rem; font-weight: 800; color: #1a2a2a; letter-spacing: -0.5px; }
+    .logo span { color: #4caf50; }
+    .nav-toggle { display: none; background: none; border: none; flex-direction: column; gap: 4px; cursor: pointer; padding: 6px; z-index: 1001; }
+    .nav-toggle span { width: 26px; height: 2.5px; background: #1a2a2a; border-radius: 4px; transition: 0.25s; }
+    .nav-menu { display: flex; align-items: center; gap: 32px; }
+    .nav-list { display: flex; gap: 28px; flex-wrap: wrap; }
+    .nav-link { font-weight: 500; font-size: 0.85rem; color: #1a2a2a; transition: 0.3s; position: relative; letter-spacing: 0.3px; }
+    .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0%; height: 2px; background: #ff8f00; transition: 0.3s; }
+    .nav-link:hover { color: #ff8f00; }
+    .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+    .nav-link.active { color: #ff8f00; }
+    .nav-actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 8px 20px; border-radius: 60px; font-weight: 600; font-size: 0.8rem; transition: 0.35s cubic-bezier(0.15, 0.75, 0.3, 1); border: none; cursor: pointer; letter-spacing: 0.3px; white-space: nowrap; }
+    .btn-outline-primary { background: transparent; border: 2px solid #4caf50; color: #4caf50; }
+    .btn-outline-primary:hover { background: #4caf50; color: white; transform: translateY(-2px); box-shadow: 0 6px 16px rgba(76,175,80,0.12); }
+    .btn-donate { background: #ff8f00; color: white; }
+    .btn-donate:hover { background: #e65100; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,143,0,0.25); }
+    .btn-accent { background: #4caf50; color: white; }
+    .btn-accent:hover { background: #388e3c; transform: translateY(-3px); box-shadow: 0 8px 24px rgba(76,175,80,0.25); }
+    .btn-accent-orange { background: #ff8f00; color: white; }
+    .btn-accent-orange:hover { background: #e65100; transform: translateY(-3px); box-shadow: 0 8px 24px rgba(255,143,0,0.30); }
+    .btn-lg { padding: 12px 28px; font-size: 0.9rem; }
+    .btn-outline-light { background: rgba(255,255,255,0.15); backdrop-filter: blur(4px); border: 2px solid rgba(255,255,255,0.4); color: white; }
+    .btn-outline-light:hover { background: white; color: #1a2a2a; transform: translateY(-2px); }
+
+    /* ----- PAGE HERO ----- */
+    .page-hero { position: relative; padding: 80px 0 90px; color: white; overflow: hidden; min-height: 500px; display: flex; align-items: center; }
+    .page-hero-bg { position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=1920&q=80') center/cover no-repeat; z-index: 0; }
+    .page-hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(15,42,26,0.85) 0%, rgba(30,74,46,0.75) 50%, rgba(46,125,50,0.70) 100%); z-index: 1; }
+    .page-hero .container { position: relative; z-index: 2; width: 100%; }
+    .breadcrumb-custom { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; opacity: 0.7; margin-bottom: 20px; letter-spacing: 0.3px; }
+    .breadcrumb-custom a { color: rgba(255,255,255,0.8); }
+    .breadcrumb-custom a:hover { color: #ffb74d; }
+    .breadcrumb-custom i { font-size: 0.5rem; color: rgba(255,255,255,0.4); }
+    .page-hero h1 { font-size: 3.5rem; font-weight: 800; font-family: 'Poppins', sans-serif; letter-spacing: -1px; line-height: 1.1; margin-bottom: 16px; }
+    .page-hero h1 span { color: #ffb74d; }
+    .page-hero .lead { font-size: 1.15rem; max-width: 600px; opacity: 0.85; font-weight: 300; line-height: 1.7; }
+    .page-hero .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+    @media (max-width: 768px) { 
+      .page-hero { padding: 50px 0 60px; min-height: 400px; } 
+      .page-hero h1 { font-size: 2.2rem; } 
+      .page-hero .lead { font-size: 1rem; max-width: 100%; }
+    }
+    @media (max-width: 480px) { 
+      .page-hero { padding: 40px 0 50px; min-height: 320px; }
+      .page-hero h1 { font-size: 1.8rem; }
+      .page-hero .lead { font-size: 0.9rem; }
+    }
+
+    /* ----- STATS BANNER ----- */
+    .programs-stats { background: #ffffff; padding: 28px 0; margin-top: -2px; border-bottom: 1px solid rgba(0,0,0,0.04); }
+    .programs-stats h2 { color: #1a2a2a; font-weight: 800; font-size: 2.2rem; letter-spacing: -0.5px; }
+    .programs-stats h2 .orange { color: #ff8f00; }
+    .programs-stats p { color: #1a2a2a; font-weight: 500; opacity: 0.5; font-size: 0.9rem; letter-spacing: 0.3px; }
+    @media (max-width: 480px) { .programs-stats h2 { font-size: 1.6rem; } }
+
+    /* ----- FILTER ----- */
+    .filter-bar { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-bottom: 16px; }
+    .filter-btn { padding: 6px 16px; border-radius: 60px; border: 1.5px solid #e8ece8; background: transparent; font-weight: 600; font-size: 0.75rem; color: #1a2a2a; transition: 0.3s; cursor: pointer; letter-spacing: 0.2px; }
+    .filter-btn:hover { border-color: #ff8f00; color: #ff8f00; transform: translateY(-2px); }
+    .filter-btn.active { background: #ff8f00; border-color: #ff8f00; color: white; box-shadow: 0 4px 14px rgba(255,143,0,0.15); }
+
+    /* ----- PROGRAM CARDS ----- */
+    .program-card-modern { background: #ffffff; border-radius: 20px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.02); transition: 0.4s cubic-bezier(0.15, 0.75, 0.3, 1); height: 100%; display: flex; flex-direction: column; border: 1px solid rgba(0,0,0,0.04); }
+    .program-card-modern:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(0,0,0,0.04); }
+    .program-card-header { position: relative; overflow: hidden; aspect-ratio: 16/9; }
+    .program-card-header img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s cubic-bezier(0.2, 0.9, 0.4, 1); }
+    .program-card-modern:hover .program-card-header img { transform: scale(1.04); }
+    .program-card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.20) 0%, transparent 70%); }
+    .program-number { position: absolute; top: 10px; right: 14px; font-size: 2rem; font-weight: 800; color: rgba(255,255,255,0.06); font-family: 'Poppins', sans-serif; line-height: 1; }
+    .program-icon-large { position: absolute; bottom: 10px; left: 14px; width: 40px; height: 40px; background: rgba(255,255,255,0.92); backdrop-filter: blur(4px); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; box-shadow: 0 2px 12px rgba(0,0,0,0.03); }
+    .program-card-body { padding: 18px 18px 22px; flex: 1; display: flex; flex-direction: column; }
+    .eligibility-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 0.65rem; font-weight: 700; padding: 3px 12px; border-radius: 60px; margin-bottom: 10px; width: fit-content; background: #f0f7f0; color: #2e7d32; letter-spacing: 0.3px; }
+    .eligibility-badge.orange { background: #fff3e0; color: #e65100; }
+    .program-card-body h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; color: #1a2a2a; }
+    .program-card-body p { font-size: 0.82rem; color: #3a4a4a; line-height: 1.6; margin-bottom: 12px; flex: 1; }
+    .program-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 12px; }
+    .program-tag { padding: 2px 10px; border-radius: 60px; font-size: 0.6rem; font-weight: 600; background: #f0f7f0; color: #2e7d32; letter-spacing: 0.2px; }
+    .program-tag.orange { background: #fff3e0; color: #e65100; }
+    .program-card-footer { display: flex; justify-content: flex-end; border-top: 1px solid #f0f0f0; padding-top: 12px; margin-top: auto; }
+    .btn-apply { font-weight: 700; color: #4caf50; display: inline-flex; align-items: center; gap: 6px; transition: 0.3s; font-size: 0.8rem; }
+    .btn-apply:hover { color: #ff8f00; gap: 10px; transform: translateX(4px); }
+    .btn-apply.orange { color: #ff8f00; }
+    .btn-apply.orange:hover { color: #e65100; }
+
+    /* category colors */
+    .cat-agriculture .program-icon-large { color: #43a047; }
+    .cat-health .program-icon-large { color: #e53935; }
+    .cat-youth .program-icon-large { color: #7b1fa2; }
+    .cat-education .program-icon-large { color: #1e88e5; }
+    .cat-justice .program-icon-large { color: #ef6c00; }
+    .cat-technology .program-icon-large { color: #00897b; }
+    .cat-economy .program-icon-large { color: #f9a825; }
+    .cat-community .program-icon-large { color: #d84315; }
+    .cat-environment .program-icon-large { color: #2e7d32; }
+    .cat-emergency .program-icon-large { color: #d32f2f; }
+
+    .cat-health .eligibility-badge { background: #ffebee; color: #c62828; }
+    .cat-youth .eligibility-badge { background: #f3e5f5; color: #6a1b9a; }
+    .cat-education .eligibility-badge { background: #e3f2fd; color: #1565c0; }
+    .cat-justice .eligibility-badge { background: #fff3e0; color: #e65100; }
+    .cat-technology .eligibility-badge { background: #e0f7fa; color: #00838f; }
+    .cat-economy .eligibility-badge { background: #fff8e1; color: #f57f17; }
+    .cat-community .eligibility-badge { background: #fbe9e7; color: #d84315; }
+    .cat-environment .eligibility-badge { background: #e8f5e9; color: #1b5e20; }
+    .cat-emergency .eligibility-badge { background: #ffebee; color: #b71c1c; }
+
+    .cat-health .program-tag { background: #ffebee; color: #c62828; }
+    .cat-youth .program-tag { background: #f3e5f5; color: #6a1b9a; }
+    .cat-education .program-tag { background: #e3f2fd; color: #1565c0; }
+    .cat-justice .program-tag { background: #fff3e0; color: #e65100; }
+    .cat-technology .program-tag { background: #e0f7fa; color: #00838f; }
+    .cat-economy .program-tag { background: #fff8e1; color: #f57f17; }
+    .cat-community .program-tag { background: #fbe9e7; color: #d84315; }
+    .cat-environment .program-tag { background: #e8f5e9; color: #1b5e20; }
+    .cat-emergency .program-tag { background: #ffebee; color: #b71c1c; }
+
+    .cat-health .btn-apply { color: #e53935; }
+    .cat-health .btn-apply:hover { color: #ff8f00; }
+    .cat-youth .btn-apply { color: #7b1fa2; }
+    .cat-youth .btn-apply:hover { color: #ff8f00; }
+    .cat-education .btn-apply { color: #1e88e5; }
+    .cat-education .btn-apply:hover { color: #ff8f00; }
+    .cat-justice .btn-apply { color: #ef6c00; }
+    .cat-justice .btn-apply:hover { color: #ff8f00; }
+    .cat-technology .btn-apply { color: #00897b; }
+    .cat-technology .btn-apply:hover { color: #ff8f00; }
+    .cat-economy .btn-apply { color: #f9a825; }
+    .cat-economy .btn-apply:hover { color: #ff8f00; }
+    .cat-community .btn-apply { color: #d84315; }
+    .cat-community .btn-apply:hover { color: #ff8f00; }
+    .cat-environment .btn-apply { color: #2e7d32; }
+    .cat-environment .btn-apply:hover { color: #ff8f00; }
+    .cat-emergency .btn-apply { color: #d32f2f; }
+    .cat-emergency .btn-apply:hover { color: #ff8f00; }
+
+    /* ----- CTA ----- */
+    .section-cta { position: relative; padding: 60px 0; overflow: hidden; }
+    .cta-bg { position: absolute; inset: 0; background-size: cover; background-position: center; filter: brightness(0.3) saturate(1.1); }
+    .cta-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(248,248,248,0.88) 100%); }
+    .cta-content { position: relative; z-index: 2; text-align: center; color: #1a2a2a; }
+    .cta-content h2 { font-size: 2.5rem; font-weight: 800; font-family: 'Poppins', sans-serif; margin-bottom: 10px; }
+    .cta-content h2 .highlight { color: #ff8f00; }
+    .cta-content p { font-size: 1rem; opacity: 0.7; max-width: 500px; margin: 0 auto 24px; }
+    .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    @media (max-width: 768px) { .cta-content h2 { font-size: 1.8rem; } .section-cta { padding: 40px 0; } }
+
+    /* ----- FOOTER (dark blue, orange icons, white text) ----- */
+    .site-footer { background: #0a1628; color: rgba(255,255,255,0.85); padding: 50px 0 20px; border-top: 1px solid rgba(255,255,255,0.05); }
+    .footer-logo { font-family: 'Poppins', sans-serif; font-size: 1.6rem; font-weight: 800; color: white; }
+    .footer-logo span { color: #ff8f00; }
+    .footer-logo p { color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-top: 8px; font-weight: 400; font-family: 'Inter', sans-serif; }
+    .social-links { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+    .social-links a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 60px; background: rgba(255,255,255,0.06); color: #ff8f00; transition: 0.3s; border: 1px solid rgba(255,143,0,0.1); }
+    .social-links a:hover { background: #ff8f00; color: white; transform: translateY(-4px) scale(1.05); border-color: #ff8f00; box-shadow: 0 8px 24px rgba(255,143,0,0.20); }
+    .footer-col h4 { color: white; font-weight: 700; margin-bottom: 16px; font-size: 0.95rem; letter-spacing: 0.5px; }
+    .footer-col ul li { margin-bottom: 8px; }
+    .footer-col ul li a { transition: 0.3s; font-size: 0.85rem; color: rgba(255,255,255,0.6); }
+    .footer-col ul li a:hover { color: #ff8f00; padding-left: 6px; }
+    .footer-contact li { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; font-size: 0.85rem; color: rgba(255,255,255,0.6); }
+    .footer-contact li i { color: #ff8f00; width: 18px; margin-top: 3px; font-size: 0.9rem; }
+    .newsletter-form { display: flex; margin-top: 14px; background: rgba(255,255,255,0.06); border-radius: 60px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); }
+    .newsletter-form input { flex: 1; padding: 10px 18px; background: transparent; border: none; color: white; outline: none; font-size: 0.85rem; min-width: 0; }
+    .newsletter-form input::placeholder { color: rgba(255,255,255,0.3); }
+    .newsletter-form button { background: #ff8f00; border: none; padding: 0 20px; color: white; font-size: 0.9rem; cursor: pointer; transition: 0.3s; flex-shrink: 0; }
+    .newsletter-form button:hover { background: #e65100; transform: scale(1.02); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 20px; margin-top: 10px; display: flex; justify-content: space-between; flex-wrap: wrap; font-size: 0.8rem; color: rgba(255,255,255,0.4); gap: 10px; }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .footer-links a { transition: 0.3s; color: rgba(255,255,255,0.4); }
+    .footer-links a:hover { color: #ff8f00; }
+
+    /* ----- back to top ----- */
+    .back-to-top { position: fixed; bottom: 20px; right: 20px; width: 40px; height: 40px; border-radius: 60px; background: #ff8f00; color: white; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; box-shadow: 0 4px 20px rgba(255,143,0,0.25); opacity: 0; visibility: hidden; transition: 0.35s cubic-bezier(0.2, 0.9, 0.4, 1); z-index: 999; }
+    .back-to-top.visible { opacity: 1; visibility: visible; }
+    .back-to-top:hover { background: #e65100; transform: translateY(-4px) scale(1.05); }
+
+    /* ----- HOW IT WORKS (improved cards) ----- */
+    .how-section { background: #f5f8f5; padding: 60px 0; }
+    .how-card { background: #ffffff; border-radius: 24px; padding: 2rem 1.8rem; text-align: center; transition: 0.4s cubic-bezier(0.15, 0.75, 0.3, 1); border: 1px solid rgba(0,0,0,0.04); box-shadow: 0 2px 16px rgba(0,0,0,0.01); height: 100%; display: flex; flex-direction: column; align-items: center; }
+    .how-card:hover { transform: translateY(-8px); box-shadow: 0 20px 48px rgba(0,0,0,0.04); border-color: rgba(255,143,0,0.10); }
+    .how-card .step-number { width: 56px; height: 56px; border-radius: 60px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 800; margin-bottom: 1rem; background: #fff3e0; color: #ff8f00; transition: 0.3s; }
+    .how-card:hover .step-number { background: #ff8f00; color: white; transform: scale(1.05); }
+    .how-card .icon-wrap { width: 72px; height: 72px; border-radius: 60px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 1.2rem; background: #f0f7f0; color: #4caf50; transition: 0.3s; }
+    .how-card:hover .icon-wrap { background: #e8f5e9; transform: scale(1.02); }
+    .how-card h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: #1a2a2a; }
+    .how-card p { font-size: 0.88rem; color: #3a4a4a; opacity: 0.7; line-height: 1.6; max-width: 280px; margin: 0 auto; }
+    .how-card .icon-wrap.orange { background: #fff3e0; color: #ff8f00; }
+    .how-card:hover .icon-wrap.orange { background: #ff8f00; color: white; }
+
+    @media (max-width: 768px) {
+      .how-card { padding: 1.5rem; }
+      .how-card .step-number { width: 48px; height: 48px; font-size: 1.2rem; }
+      .how-card .icon-wrap { width: 60px; height: 60px; font-size: 1.5rem; }
+    }
+    @media (max-width: 480px) {
+      .how-card { padding: 1.2rem; }
+      .how-card .step-number { width: 42px; height: 42px; font-size: 1rem; }
+      .how-card .icon-wrap { width: 52px; height: 52px; font-size: 1.2rem; }
+      .how-card h4 { font-size: 1rem; }
+      .how-card p { font-size: 0.8rem; }
+    }
+
+    /* ----- responsive fixes ----- */
+    @media (max-width: 992px) {
+      .nav-menu { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: white; flex-direction: column; padding: 70px 24px 30px; gap: 14px; transform: translateX(100%); transition: 0.4s; z-index: 999; overflow-y: auto; }
+      .nav-menu.open { transform: translateX(0); }
+      .nav-toggle { display: flex; }
+      .nav-list { flex-direction: column; align-items: center; gap: 14px; width: 100%; }
+      .nav-actions { flex-direction: column; width: 100%; gap: 8px; }
+      .nav-actions .btn { width: 100%; justify-content: center; }
+      .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 30px !important; }
+    }
+    @media (max-width: 576px) {
+      .footer-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+      .filter-bar { gap: 4px; }
+      .filter-btn { font-size: 0.7rem; padding: 4px 12px; }
+      .program-card-body { padding: 14px; }
+      .program-card-body h3 { font-size: 0.95rem; }
+      .col-4 { padding: 0 8px; }
+      .row { margin: 0 -8px; }
+      .how-section { padding: 40px 0; }
+    }
+
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 20px; }
+    @media (max-width: 992px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; } }
+    @media (max-width: 576px) { .footer-grid { grid-template-columns: 1fr; gap: 24px; } }
+
+    @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    [data-category] { animation: fadeSlideUp 0.5s ease forwards; }
+  </style>
+</head>
+<body>
+
+  <div class="reading-progress" id="readingProgress"></div>
+
+  <!-- Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">OE<span>VI</span></a>
+        <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+        <div class="nav-menu" id="navMenu">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="programs.html" class="nav-link active">Programs</a></li>
+            <li><a href="impact.html" class="nav-link">Impact</a></li>
+            <li><a href="news.html" class="nav-link">News</a></li>
+            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+          <div class="nav-actions">
+            <a href="auth.html" class="btn btn-outline-primary"><i class="fas fa-user"></i> Login</a>
+            <a href="donate.html" class="btn btn-donate"><i class="fas fa-heart"></i> Donate</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="container">
+      <div class="breadcrumb-custom" data-aos="fade-down">
+        <a href="index.html">Home</a> <i class="fas fa-chevron-right"></i> <span>Programs</span>
+      </div>
+      <h1 data-aos="fade-up">Our <span>Programs</span></h1>
+      <p class="lead" data-aos="fade-up" data-aos-delay="100">20 integrated programs addressing the root causes of poverty and inequality across Africa. Apply online with your OEVI Digital ID.</p>
+      <div class="hero-buttons" data-aos="fade-up" data-aos-delay="200">
+        <a href="auth.html" class="btn btn-accent btn-lg"><i class="fas fa-user-plus"></i> Get Your OEVI ID</a>
+        <a href="#programs" class="btn btn-outline-light btn-lg"><i class="fas fa-arrow-down"></i> Explore Programs</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Banner -->
+  <section class="programs-stats">
+    <div class="container">
+      <div class="row g-3 text-center">
+        <div class="col-3" data-aos="fade-up"><h2>20</h2><p>Active Programs</p></div>
+        <div class="col-3" data-aos="fade-up" data-aos-delay="80"><h2>250K<span class="orange">+</span></h2><p>Beneficiaries</p></div>
+        <div class="col-3" data-aos="fade-up" data-aos-delay="160"><h2>18</h2><p>Countries</p></div>
+        <div class="col-3" data-aos="fade-up" data-aos-delay="240"><h2>92<span class="orange">%</span></h2><p>Success Rate</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter -->
+  <section style="padding: 32px 0 12px;" id="programs">
+    <div class="container">
+      <div class="filter-bar" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="all">All (20)</button>
+        <button class="filter-btn" data-filter="agriculture">Agriculture</button>
+        <button class="filter-btn" data-filter="health">Health</button>
+        <button class="filter-btn" data-filter="education">Education</button>
+        <button class="filter-btn" data-filter="environment">Environment</button>
+        <button class="filter-btn" data-filter="justice">Justice</button>
+        <button class="filter-btn" data-filter="youth">Youth</button>
+        <button class="filter-btn" data-filter="community">Community</button>
+        <button class="filter-btn" data-filter="technology">Technology</button>
+        <button class="filter-btn" data-filter="economy">Economy</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs Grid -->
+  <section style="padding-top: 0; padding-bottom: 32px;">
+    <div class="container">
+      <div class="row g-4">
+
+        <!-- 1. Agriculture -->
+        <div class="col-4" data-category="agriculture" data-aos="fade-up">
+          <div class="program-card-modern cat-agriculture">
+            <div class="program-card-header"><img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80" alt="Agriculture" loading="lazy" /><div class="program-card-overlay"></div><div class="program-number">01</div><div class="program-icon-large"><i class="fas fa-seedling"></i></div></div>
+            <div class="program-card-body"><div class="eligibility-badge"><i class="fas fa-check-circle"></i> Open</div><h3>Agricultural Programs</h3><p>Seeds, tools, and training for smallholder farmers. Includes seed banks, livestock distribution, and sustainable farming.</p><div class="program-tags"><span class="program-tag">Seeds</span><span class="program-tag">Livestock</span><span class="program-tag">Training</span></div><div class="program-card-footer"><a href="apply.html" class="btn-apply">Apply <i class="fas fa-arrow-right"></i></a></div></div>
+          </div>
+        </div>
+
+        <!-- 2. Health -->
+        <div class="col-4" data-category="health" data-aos="fade-up" data-aos-delay="80">
+          <div class="program-card-modern cat-health">
+            <div class="program-card-header"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80" alt="Health" loading="lazy" /><div class="program-card-overlay"></div><div class="program-number">02</div><div class="program-icon-large"><i class="fas fa-heartbeat"></i></div></div>
+            <div class="program-card-body"><div class="eligibility-badge"><i class="fas fa-check-circle"></i> Open</div><h3>Health Programs</h3><p>Mobile clinics, maternal care, immunization campaigns, and disease prevention reaching remote communities.</p><div class="program-tags"><span class="program-tag">Clinics</span><span class="program-tag">Maternal</span><span class="program-tag">Prevention</span></div><div class="program-card-footer"><a href="apply.html" class="btn-apply">Apply <i class="fas fa-arrow-right"></i></a></div></div>
+          </div>
+        </div>
+
+        <!-- 3. Sports -->
+        <div class="col-4" data-category="youth" data-aos="fade-up" data-aos-delay="160">
+          <div class="program-card-modern cat-youth">
+            <div class="program-card-header"><img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?w=800&q=80" alt="Sports" loading="lazy" /><div class="program-card-overlay"></div><div class="program-number">03</div><div class="program-icon-large"><i class="fas fa-futbol"></i></div></div>
+            <div class="program-card-body"><div class="eligibility-badge"><i class="fas fa-check-circle"></i> Open</div><h3>Sports Programs</h3><p>Youth development through sports, physical education, and community tournaments promoting health and teamwork.</p><div class="program-tags"><span class="program-tag">Youth</span><span class="program-tag">Fitness</span><span class="program-tag">Tournaments</span></div><div class="program-card-footer"><a href="apply.html" class="btn-apply">Apply <i class="fas fa-arrow-right"></i></a></div></div>
+          </div>
+        </div>
+
+        <!-- 4. Vocational -->
+        <div class="col-4" data-category="youth" data-aos="fade-up">
+          <div class="program-card-modern cat-education">
+            <div class="program-card-header"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80" alt="Vocational" loading="lazy" /><div class="program-card-overlay"></div><div class="program-number">04</div><div class="program-icon-large"><i class="fas fa-tools"></i></div></div>
+            <div class="program-card-body"><div class="eligibility-badge"><i class="fas fa-check-circle"></i> Open</div><h3>Skills &amp; Vocational Training</h3><p>Practical skills training in carpentry, tailoring, mechanics, and other trades for youth employment.</p><div class="program-tags"><span class="program-tag">Carpentry</span><span class="program-tag">Tailoring</span><span class="program-tag">Employment</span></div><div class="program-card-footer"><a href="apply.html" class="btn-apply">Apply <i class="fas fa-arrow-right"></i></a></div></div>
+          </div>
+        </div>
+
+        <!-- 5. Justice -->
+        <div class="col-4" data-category="justice" data-aos="fade-up" data-aos-delay="80">
+          <div class="program-card-modern cat-justice">
+            <div class="program-card-header"><img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80" alt="Justice" loading="lazy" /><div class="program-card-overlay"></div><div class="program-number">05</div><div class="program-icon-large"><i class="fas fa-balance-scale"></i></div></div>
+            <div class="program-card-body"><div class="eligibility-badge"><i class="fas fa-check-circle"></i> Open</div><h3>Justice &amp; Human Rights</h3><p>Legal aid, rights awareness, and advocacy for vulnerable populations including women and children.</p><div class="program-tags"><span class="program-tag">Legal Aid</span><span class="program-tag">Advocacy</span><span class="program-tag">Rights</span></div><div class="program-card-footer"><a href="apply.html" class="btn-apply">Apply <i class="fas fa-arrow-right"></i></a></div></div>
+          </div>
+        </div>
+
+        <!-- 6. Technology -->
+        <div class="col-4" data-category="technology" data-aos="fade-up" data-aos-delay="160">
+          <div class="program-card-modern cat-technology">
+            <div class="program-card-header"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80" alt="Technology" loading="lazy" /><div class="program-card-overlay"></div><div class="program-number">06</div><div class="program-icon-large"><i class="fas fa-microchip"></i></div></div>
+            <div class="program-card-body"><div class="eligibility-badge"><i class="fas fa-check-circle"></i> Open</div><h3>Infrastructure, Innovation &amp; Tech</h3><p>Building schools, clinics, roads, and introducing digital solutions for community development.</p><div class="program-tags"><span class="program-tag">Schools</span><span class="program-tag">Digital</span><span class="program-tag">Innovation</span></div><div class="program-card-footer"><a href="apply.html" class="btn-apply">Apply <i class="fas fa-arrow-right"></i></a></div></div>
+          </div>
+        </div>
+
+        <!-- 7. Economy -->
+        <div class="col-4" data-category="economy" data-aos="fade-up">
+          <div class="program-card-modern cat-economy">
+            <div class="program-card-header"><img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=800&q=80" alt="Economy" loading="lazy" /><div class="program-card-overlay"></div><div class="program-number">07</div><div class="program-icon-large"><i class="fas fa-chart-line"></i></div></div>
+            <div class="program-card-body"><div class="eligibility-badge orange"><i class="fas fa-star"></i> Featured</div><h3>Supply Chain &amp; Economic Ops</h3><p>Market access, value chain development, and economic empowerment for rural communities.</p><div class="program-tags"><span class="program-tag orange">Markets</span><span class="program-tag orange">Value Chain</span><span class="program-tag orange">Trade</span></div><div class="program-card-footer"><a href="apply.html" class="btn-apply orange">Apply <i class="fas fa-arrow-right"></i></a></div></div>
+          </div>
+        </div>
+
+        <!-- 8. Community Arts -->
+        <div class="col-4" data-category="community" data-aos="fade-up" data-aos-delay="80">
+          <div class="program-card-modern cat-community">
+            <div class="program-card-header"><img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80" alt="Culture" loading="lazy" /><div class="program-card-overlay"></div><div class="program-number">08</div><div class="program-icon-large"><i class="fas fa-palette"></i></div></div>
+            <div class="program-card-body"><div class="eligibility-badge"><i class="fas fa-check-circle"></i> Open</div><h3>Community, Arts &amp; Culture</h3><p>Preserving cultural heritage, supporting local artists, and building community cohesion through arts.</p><div class="program-tags"><span class="program-tag">Heritage</span><span class="program-tag">Arts</span><span class="program-tag">Community</span></div><div class="program-card-footer"><a href="apply.html" class="btn-apply">Apply <i class="fas fa-arrow-right"></i></a></div></div>
+          </div>
+        </div>
+
+        <!-- 9. Education -->
+        <div class="col-4" data-category="education" data-aos="fade-up" data-aos-delay="160">
+          <div class="program-card-modern cat-education">
+            <div class="program-card-header"><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80" alt="Education" loading="lazy" /><div class="program-card-overlay"></div><div class="program-number">09</div><div class="program-icon-large"><i class="fas fa-graduation-cap"></i></div></div>
+            <div class="program-card-body"><div class="eligibility-badge"><i class="fas fa-check-circle"></i> Open</div><h3>Education &amp; Literacy</h3><p>Scholarships, school construction, teacher training, and adult literacy programs for all ages.</p><div class="program-tags"><span class="program-tag">Scholarships</span><span class="program-tag">Schools</span><span class="program-tag">Literacy</span></div><div class="program-card-footer"><a href="apply.html" class="btn-apply">Apply <i class="fas fa-arrow-right"></i></a></div></div>
+          </div>
+        </div>
+
+        <!-- 10. Environment -->
+        <div class="col-4" data-category="environment" data-aos="fade-up">
+          <div class="program-card-modern cat-environment">
+            <div class="program-card-header"><img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&q=80" alt="Environment" loading="lazy" /><div class="program-card-overlay"></div><div class="program-number">10</div><div class="program-icon-large"><i class="fas fa-leaf"></i></div></div>
+            <div class="program-card-body"><div class="eligibility-badge"><i class="fas fa-check-circle"></i> Open</div><h3>Environmental &amp; Climate Resilient</h3><p>Reforestation, clean water access, renewable energy, and climate adaptation initiatives.</p><div class="program-tags"><span class="program-tag">Trees</span><span class="program-tag">Water</span><span class="program-tag">Climate</span></div><div class="program-card-footer"><a href="apply.html" class="btn-apply">Apply <i class="fas fa-arrow-right"></i></a></div></div>
+          </div>
+        </div>
+
+        <!-- 11. Social Protection -->
+        <div class="col-4" data-category="community" data-aos="fade-up" data-aos-delay="80">
+          <div class="program-card-modern cat-community">
+            <div class="program-card-header"><img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&q=80" alt="Social Protection" loading="lazy" /><div class="program-card-overlay"></div><div class="program-number">11</div><div class="program-icon-large"><i class="fas fa-hands-helping"></i></div></div>
+            <div class="program-card-body"><div class="eligibility-badge"><i class="fas fa-check-circle"></i> Open</div><h3>Social Protection &amp; Vulnerable Groups</h3><p>Safety nets for orphans, elderly, disabled, and other vulnerable populations.</p><div class="program-tags"><span class="program-tag">Orphans</span><span class="program-tag">Elderly</span><span class="program-tag">Support</span></div><div class="program-card-footer"><a href="apply.html" class="btn-apply">Apply <i class="fas fa-arrow-right"></i></a></div></div>
+          </div>
+        </div>
+
+        <!-- 12. Disaster -->
+        <div class="col-4" data-category="emergency" data-aos="fade-up" data-aos-delay="160">
+          <div class="program-card-modern cat-emergency">
+            <div class="program-card-header"><img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80" alt="Emergency" loading="lazy" /><div class="program-card-overlay"></div><div class="program-number">13</div><div class="program-icon-large"><i class="fas fa-ambulance"></i></div></div>
+            <div class="program-card-body"><div class="eligibility-badge"><i class="fas fa-exclamation-triangle"></i> Urgent</div><h3>Disaster Preparedness &amp; Response</h3><p>Emergency relief, disaster risk reduction, and community resilience building.</p><div class="program-tags"><span class="program-tag">Relief</span><span class="program-tag">Preparedness</span><span class="program-tag">Response</span></div><div class="program-card-footer"><a href="apply.html" class="btn-apply">Apply <i class="fas fa-arrow-right"></i></a></div></div>
+          </div>
+        </div>
+
+        <!-- 13. Leadership -->
+        <div class="col-4" data-category="community" data-aos="fade-up">
+          <div class="program-card-modern cat-justice">
+            <div class="program-card-header"><img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=800&q=80" alt="Leadership" loading="lazy" /><div class="program-card-overlay"></div><div class="program-number">14</div><div class="program-icon-large"><i class="fas fa-users-cog"></i></div></div>
+            <div class="program-card-body"><div class="eligibility-badge"><i class="fas fa-check-circle"></i> Open</div><h3>Leadership, Governance &amp; Civic Engagement</h3><p>Training community leaders, promoting good governance, and encouraging civic participation.</p><div class="program-tags"><span class="program-tag">Leadership</span><span class="program-tag">Governance</span><span class="program-tag">Civic</span></div><div class="program-card-footer"><a href="apply.html" class="btn-apply">Apply <i class="fas fa-arrow-right"></i></a></div></div>
+          </div>
+        </div>
+
+        <!-- 14. Family Psychosocial -->
+        <div class="col-4" data-category="community" data-aos="fade-up" data-aos-delay="80">
+          <div class="program-card-modern cat-health">
+            <div class="program-card-header"><img src="https://images.unsplash.com/photo-1491013516836-7db643ee1256?w=800&q=80" alt="Family" loading="lazy" /><div class="program-card-overlay"></div><div class="program-number">15</div><div class="program-icon-large"><i class="fas fa-home"></i></div></div>
+            <div class="program-card-body"><div class="eligibility-badge"><i class="fas fa-check-circle"></i> Open</div><h3>Family &amp; Psychosocial Support</h3><p>Counseling, family strengthening, and mental health support for communities in crisis.</p><div class="program-tags"><span class="program-tag">Counseling</span><span class="program-tag">Family</span><span class="program-tag">Mental Health</span></div><div class="program-card-footer"><a href="apply.html" class="btn-apply">Apply <i class="fas fa-arrow-right"></i></a></div></div>
+          </div>
+        </div>
+
+        <!-- 15. Micro-Enterprise -->
+        <div class="col-4" data-category="economy" data-aos="fade-up" data-aos-delay="160">
+          <div class="program-card-modern cat-economy">
+            <div class="program-card-header"><img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=800&q=80" alt="Enterprise" loading="lazy" /><div class="program-card-overlay"></div><div class="program-number">16</div><div class="program-icon-large"><i class="fas fa-store"></i></div></div>
+            <div class="program-card-body"><div class="eligibility-badge orange"><i class="fas fa-star"></i> Featured</div><h3>Micro-Enterprise &amp; Market Access</h3><p>Microloans, business training, and market linkages for small entrepreneurs.</p><div class="program-tags"><span class="program-tag orange">Loans</span><span class="program-tag orange">Business</span><span class="program-tag orange">Markets</span></div><div class="program-card-footer"><a href="apply.html" class="btn-apply orange">Apply <i class="fas fa-arrow-right"></i></a></div></div>
+          </div>
+        </div>
+
+        <!-- 16. Media Advocacy -->
+        <div class="col-4" data-category="community" data-aos="fade-up">
+          <div class="program-card-modern cat-technology">
+            <div class="program-card-header"><img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&q=80" alt="Media" loading="lazy" /><div class="program-card-overlay"></div><div class="program-number">17</div><div class="program-icon-large"><i class="fas fa-bullhorn"></i></div></div>
+            <div class="program-card-body"><div class="eligibility-badge"><i class="fas fa-check-circle"></i> Open</div><h3>Media, Communications &amp; Advocacy</h3><p>Amplifying community voices through media training, advocacy campaigns, and public awareness.</p><div class="program-tags"><span class="program-tag">Media</span><span class="program-tag">Advocacy</span><span class="program-tag">Campaigns</span></div><div class="program-card-footer"><a href="apply.html" class="btn-apply">Apply <i class="fas fa-arrow-right"></i></a></div></div>
+          </div>
+        </div>
+
+        <!-- 17. R&D -->
+        <div class="col-4" data-category="technology" data-aos="fade-up" data-aos-delay="80">
+          <div class="program-card-modern cat-technology">
+            <div class="program-card-header"><img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&q=80" alt="Research" loading="lazy" /><div class="program-card-overlay"></div><div class="program-number">19</div><div class="program-icon-large"><i class="fas fa-flask"></i></div></div>
+            <div class="program-card-body"><div class="eligibility-badge"><i class="fas fa-check-circle"></i> Open</div><h3>R&amp;D for Local Innovation</h3><p>Supporting local research, innovation hubs, and community-driven solutions to development challenges.</p><div class="program-tags"><span class="program-tag">Research</span><span class="program-tag">Innovation</span><span class="program-tag">Solutions</span></div><div class="program-card-footer"><a href="apply.html" class="btn-apply">Apply <i class="fas fa-arrow-right"></i></a></div></div>
+          </div>
+        </div>
+
+        <!-- 18. Consumer Protection -->
+        <div class="col-4" data-category="economy" data-aos="fade-up" data-aos-delay="160">
+          <div class="program-card-modern cat-economy">
+            <div class="program-card-header"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80" alt="Finance" loading="lazy" /><div class="program-card-overlay"></div><div class="program-number">20</div><div class="program-icon-large"><i class="fas fa-shield-alt"></i></div></div>
+            <div class="program-card-body"><div class="eligibility-badge orange"><i class="fas fa-star"></i> Featured</div><h3>Consumer Protection &amp; Financial Advocacy</h3><p>Financial literacy, consumer rights education, and advocacy for fair financial practices.</p><div class="program-tags"><span class="program-tag orange">Finance</span><span class="program-tag orange">Rights</span><span class="program-tag orange">Literacy</span></div><div class="program-card-footer"><a href="apply.html" class="btn-apply orange">Apply <i class="fas fa-arrow-right"></i></a></div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works (improved cards) -->
+  <section class="how-section">
+    <div class="container">
+      <div class="text-center" data-aos="fade-up">
+        <span style="background:#fff3e0; padding:4px 20px; border-radius:60px; font-weight:600; color:#e65100; font-size:0.8rem; display:inline-block; margin-bottom:8px;">How It Works</span>
+        <h2 style="font-size:2.2rem; font-weight:800; margin:8px 0; color:#1a2a2a;">Apply in 3 Simple Steps</h2>
+        <p style="max-width:500px; margin:0 auto 32px; color:#3a4a4a; font-size:0.95rem; opacity:0.7;">Our Digital Citizen Profile system makes applications easy and fast.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-4" data-aos="fade-up">
+          <div class="how-card">
+            <div class="step-number">01</div>
+            <div class="icon-wrap"><i class="fas fa-user-plus"></i></div>
+            <h4>Register Once</h4>
+            <p>Create your Digital Citizen Profile and receive your unique OEVI ID.</p>
+          </div>
+        </div>
+        <div class="col-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="how-card">
+            <div class="step-number">02</div>
+            <div class="icon-wrap"><i class="fas fa-mouse-pointer"></i></div>
+            <h4>Choose Program</h4>
+            <p>Browse all 20 programs and click "Apply" on your chosen program.</p>
+          </div>
+        </div>
+        <div class="col-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="how-card">
+            <div class="step-number">03</div>
+            <div class="icon-wrap orange"><i class="fas fa-check-circle"></i></div>
+            <h4>Auto-Fill &amp; Submit</h4>
+            <p>Your profile auto-fills the application. Review and submit in minutes.</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-5" data-aos="fade-up">
+        <a href="auth.html" class="btn btn-accent btn-lg"><i class="fas fa-id-card"></i> Get Your OEVI ID Now</a>
+        <a href="auth.html" class="btn btn-accent-orange btn-lg" style="margin-left:10px;"><i class="fas fa-rocket"></i> Quick Apply</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-cta">
+    <div class="cta-bg" style="background-image: url('https://images.unsplash.com/photo-1593113598332-cd288d649433?w=1920&q=80');"></div>
+    <div class="cta-overlay"></div>
+    <div class="container"><div class="cta-content" data-aos="zoom-in"><h2>Ready to <span class="highlight">Transform</span> Your Life?</h2><p>Join 250,000+ beneficiaries across Africa. Your OEVI Digital ID is your key to opportunity.</p><div class="cta-buttons"><a href="auth.html" class="btn btn-accent btn-lg"><i class="fas fa-user-plus"></i> Register Now</a><a href="contact.html" class="btn btn-accent-orange btn-lg"><i class="fas fa-question-circle"></i> Need Help?</a></div></div></div>
+  </section>
+
+  <!-- Footer (dark blue, orange icons) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-logo">OE<span>VI</span></div>
+          <p style="color: rgba(255,255,255,0.5); font-size: 0.85rem; margin-top: 8px;">Empowering communities through sustainable programs and digital innovation.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="impact.html">Our Impact</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="programs.html">Agriculture</a></li>
+            <li><a href="programs.html">Healthcare</a></li>
+            <li><a href="programs.html">Education</a></li>
+            <li><a href="programs.html">Environment</a></li>
+            <li><a href="programs.html">Youth</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get In Touch</h4>
+          <ul class="footer-contact">
+            <li><i class="fas fa-map-marker-alt"></i><span>123 Community Ave, Nairobi, Kenya</span></li>
+            <li><i class="fas fa-phone"></i><span>+254 700 123 456</span></li>
+            <li><i class="fas fa-envelope"></i><span>hello@oevi.org</span></li>
+          </ul>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email" required />
+            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 OEVI Digital Management System. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 500, easing: 'ease-out-cubic', once: true });
+
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight ? (scrollTop / docHeight) * 100 : 0;
+      document.getElementById('readingProgress').style.width = progress + '%';
+      const btn = document.getElementById('backToTop');
+      if (scrollTop > 400) btn.classList.add('visible'); else btn.classList.remove('visible');
+    });
+
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('navMenu').classList.toggle('open');
+    });
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        const filter = this.dataset.filter;
+        document.querySelectorAll('[data-category]').forEach(item => {
+          if (filter === 'all' || item.dataset.category === filter) {
+            item.style.display = '';
+            item.style.animation = 'fadeSlideUp 0.4s ease forwards';
+          } else item.style.display = 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

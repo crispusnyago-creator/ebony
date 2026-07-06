@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apply — OEVI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+  <style>
+    .step-container { display: none; }
+    .step-container.active { display: block; animation: fadeIn 0.5s; }
+  </style>
+</head>
+<body>
+
+  <!-- UNIFIED HEADER -->
+  <header class="site-header scrolled" id="siteHeader">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">OE<span>VI</span></a>
+        <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+        <div class="nav-menu" id="navMenu">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="programs.html" class="nav-link">Programs</a></li>
+            <li><a href="impact.html" class="nav-link">Impact</a></li>
+            <li><a href="news.html" class="nav-link">News</a></li>
+            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+          <div class="nav-actions">
+            <a href="dashboard.html" class="btn btn-outline-light"><i class="fas fa-arrow-left"></i> Dashboard</a>
+            <a href="donate.html" class="btn btn-donate"><i class="fas fa-heart"></i> Donate</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="page-hero" style="--hero-bg: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1920&q=80');">
+    <div class="container text-center">
+      <h1 style="color:var(--white);">Program Application</h1>
+      <p class="lead" style="margin:0 auto;">Auto-filled from your OEVI Digital Profile.</p>
+    </div>
+  </section>
+
+  <!-- WIZARD -->
+  <section class="section">
+    <div class="container" style="max-width:800px;">
+      
+      <div class="stepper">
+        <div class="step active" data-step="1"><div class="step-circle">1</div><div class="step-label">Personal</div></div>
+        <div class="step" data-step="2"><div class="step-circle">2</div><div class="step-label">Program</div></div>
+        <div class="step" data-step="3"><div class="step-circle">3</div><div class="step-label">Review</div></div>
+      </div>
+
+      <form id="applicationForm">
+        
+        <!-- Step 1 -->
+        <div class="step-container active" data-step="1">
+          <div class="impact-card p-4">
+            <div class="text-center mb-4">
+              <div style="width:80px; height:80px; background:var(--gradient-primary); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1rem; font-size:2rem; color:var(--white);">
+                <i class="fas fa-user-check"></i>
+              </div>
+              <h4 style="color:var(--primary); margin:0;">Identity Verification</h4>
+              <p style="color:var(--gray-500); margin:0.5rem 0 0;">Your information is auto-filled from your profile.</p>
+            </div>
+            
+            <div class="row g-3">
+              <div class="col-6"><div class="form-floating-custom"><input type="text" id="appOEVI_ID" class="form-disabled" readonly /><label>OEVI ID</label></div></div>
+              <div class="col-6"><div class="form-floating-custom"><input type="text" id="appName" class="form-disabled" readonly /><label>Full Name</label></div></div>
+              <div class="col-6"><div class="form-floating-custom"><input type="text" id="appDistrict" class="form-disabled" readonly /><label>District</label></div></div>
+              <div class="col-6"><div class="form-floating-custom"><input type="text" id="appParish" class="form-disabled" readonly /><label>Parish</label></div></div>
+              <div class="col-6"><div class="form-floating-custom"><input type="text" id="appVillage" class="form-disabled" readonly /><label>Village</label></div></div>
+              <div class="col-6"><div class="form-floating-custom"><input type="text" id="appPhone" class="form-disabled" readonly /><label>Phone</label></div></div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-end mt-4">
+            <button type="button" class="btn btn-primary next-step">Next: Choose Program <i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-container" data-step="2">
+          <div class="impact-card p-4">
+            <div class="text-center mb-4">
+              <div style="width:80px; height:80px; background:var(--gradient-accent); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1rem; font-size:2rem; color:var(--gray-900);">
+                <i class="fas fa-list-alt"></i>
+              </div>
+              <h4 style="color:var(--primary); margin:0;">Select Program</h4>
+              <p style="color:var(--gray-500); margin:0.5rem 0 0;">Choose the program you want to apply for.</p>
+            </div>
+            
+            <div class="form-floating-custom">
+              <select id="appProgram" required>
+                <option value="">-- Select a Program --</option>
+                <option>Agricultural Programs</option>
+                <option>Health Programs</option>
+                <option>Education and Literacy Programs</option>
+                <option>Environmental and Climate Resilient Programs</option>
+                <option>Skills and Vocational Training</option>
+                <option>Micro-Enterprise and Market Access</option>
+                <option>Youth Empowerment Programs</option>
+                <option>Women Empowerment Programs</option>
+              </select>
+              <label>Choose Program</label>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between mt-4">
+            <button type="button" class="btn btn-outline-primary prev-step"><i class="fas fa-arrow-left"></i> Back</button>
+            <button type="button" class="btn btn-primary next-step">Next: Review <i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-container" data-step="3">
+          <div class="impact-card p-4 text-center">
+            <div style="width:100px; height:100px; background:var(--gray-50); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1.5rem; font-size:2.5rem; color:var(--primary);">
+              <i class="fas fa-paper-plane"></i>
+            </div>
+            <h4 style="color:var(--primary); margin-bottom:0.5rem;">Ready to Submit?</h4>
+            <p style="color:var(--gray-500); margin-bottom:1.5rem;">Please review your details before submitting.</p>
+            <div id="summary" style="background:var(--gray-50); padding:1.5rem; border-radius:var(--radius-md); text-align:left;"></div>
+          </div>
+          <div class="d-flex justify-content-between mt-4">
+            <button type="button" class="btn btn-outline-primary prev-step"><i class="fas fa-arrow-left"></i> Back</button>
+            <button type="submit" class="btn btn-accent">Submit Application <i class="fas fa-check"></i></button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 OEVI Digital Management System.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    if (!OEVISystem.db.currentUser) window.location.href = 'auth.html';
+    
+    const user = OEVISystem.db.currentUser;
+    document.getElementById('appOEVI_ID').value = user.id;
+    document.getElementById('appName').value = user.name;
+    document.getElementById('appDistrict').value = user.district;
+    document.getElementById('appParish').value = user.parish;
+    document.getElementById('appVillage').value = user.village;
+    document.getElementById('appPhone').value = user.phone;
+
+    const steps = document.querySelectorAll('.step-container');
+    const navSteps = document.querySelectorAll('.step');
+    let currentStep = 1;
+
+    function updateSteps(n) {
+      steps.forEach(s => s.classList.remove('active'));
+      navSteps.forEach(s => {
+        s.classList.remove('active', 'completed');
+        if (+s.dataset.step === n) s.classList.add('active');
+        if (+s.dataset.step < n) s.classList.add('completed');
+      });
+      document.querySelector(`.step-container[data-step="${n}"]`).classList.add('active');
+      currentStep = n;
+    }
+
+    document.querySelectorAll('.next-step').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (currentStep === 2) {
+          const prog = document.getElementById('appProgram').value;
+          if (!prog) { alert("Please select a program."); return; }
+        }
+        if (currentStep === 1) updateSteps(2);
+        else if (currentStep === 2) {
+          const prog = document.getElementById('appProgram').value;
+          document.getElementById('summary').innerHTML = `
+            <div style="margin-bottom:0.75rem;"><strong>Applicant:</strong> ${user.name}</div>
+            <div style="margin-bottom:0.75rem;"><strong>OEVI ID:</strong> ${user.id}</div>
+            <div style="margin-bottom:0.75rem;"><strong>Program:</strong> ${prog}</div>
+            <div style="margin-bottom:0.75rem;"><strong>Location:</strong> ${user.district}, ${user.parish}, ${user.village}</div>
+            <div><strong>Phone:</strong> ${user.phone}</div>
+          `;
+          updateSteps(3);
+        }
+      });
+    });
+
+    document.querySelectorAll('.prev-step').forEach(btn => {
+      btn.addEventListener('click', () => updateSteps(currentStep - 1));
+    });
+
+    document.getElementById('applicationForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const prog = document.getElementById('appProgram').value;
+      OEVISystem.applyForProgram(prog, {});
+      alert("Application Submitted Successfully!");
+      window.location.href = 'dashboard.html';
+    });
+  </script>
+</body>
+</html>

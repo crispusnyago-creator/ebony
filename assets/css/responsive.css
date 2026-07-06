@@ -1,0 +1,100 @@
+/* ============================================
+   OEVI — Responsive Styles (Conflict-Free)
+   ============================================ */
+
+/* Tablet (1023px and below) */
+@media (max-width: 1023px) {
+  .nav-toggle { display: flex; }
+  
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 320px;
+    height: 100vh;
+    background: var(--white);
+    flex-direction: column;
+    padding: 100px 2rem 2rem;
+    gap: 1.5rem;
+    transition: right 0.4s var(--ease);
+    box-shadow: var(--shadow-xl);
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+  
+  .nav-menu.active { right: 0; }
+  
+  .nav-list {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.25rem;
+  }
+  
+  .nav-link {
+    color: var(--gray-700) !important;
+    padding: 12px 16px;
+    width: 100%;
+    display: block;
+  }
+  
+  .nav-link:hover { color: var(--primary) !important; background: var(--gray-50); }
+  
+  .nav-actions {
+    width: 100%;
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+  
+  .nav-actions .btn { width: 100%; }
+  
+  .page-hero { padding: 130px 0 70px; }
+  
+  .row { grid-template-columns: 1fr; }
+  .col-3, .col-4, .col-6 { grid-column: span 12; }
+  
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* Tablet Portrait (767px and below) */
+@media (max-width: 767px) {
+  :root { --section-padding: 70px 0; }
+  
+  .page-hero { padding: 120px 0 60px; }
+  .page-hero h1 { font-size: 2rem; }
+  .page-hero .lead { font-size: 1rem; }
+  
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  
+  .hero-tag { font-size: 0.75rem; padding: 6px 14px; }
+  
+  .filter-btn { padding: 8px 16px; font-size: 0.85rem; }
+  
+  .program-card-body { padding: 2.5rem 1.25rem 1.25rem; }
+  
+  .stepper { gap: 0.5rem; }
+  .step-label { font-size: 0.7rem; }
+  .step-circle { width: 35px; height: 35px; font-size: 0.9rem; }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+  
+  .page-hero h1 { font-size: 1.75rem; }
+  
+  .btn { padding: 10px 20px; font-size: 0.9rem; }
+  .btn-lg { padding: 14px 28px; }
+  
+  .impact-card { padding: 1.5rem; }
+  
+  .back-to-top { bottom: 20px; right: 20px; width: 45px; height: 45px; }
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+  .col-3 { grid-column: span 3; }
+  .col-4 { grid-column: span 4; }
+  .col-6 { grid-column: span 6; }
+  .col-12 { grid-column: span 12; }
+}

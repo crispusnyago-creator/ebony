@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login / Register — OEVI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+<body>
+
+  <!-- UNIFIED HEADER -->
+  <header class="site-header scrolled" id="siteHeader">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">OE<span>VI</span></a>
+        <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+        <div class="nav-menu" id="navMenu">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="programs.html" class="nav-link">Programs</a></li>
+            <li><a href="impact.html" class="nav-link">Impact</a></li>
+            <li><a href="news.html" class="nav-link">News</a></li>
+            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+          <div class="nav-actions">
+            <a href="auth.html" class="btn btn-outline-light"><i class="fas fa-user"></i> Login</a>
+            <a href="donate.html" class="btn btn-donate"><i class="fas fa-heart"></i> Donate</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="page-hero" style="--hero-bg: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1920&q=80');">
+    <div class="container text-center">
+      <h1 style="color:var(--white); margin-bottom:0.5rem;">Digital Citizen Portal</h1>
+      <p class="lead" style="margin:0 auto;">Register once. Access all 20 programs forever.</p>
+    </div>
+  </section>
+
+  <!-- FORMS -->
+  <section class="section">
+    <div class="container">
+      <div class="row g-5">
+        
+        <!-- Registration -->
+        <div class="col-6">
+          <div class="impact-card" style="padding:2.5rem;">
+            <div class="text-center mb-4">
+              <div style="width:80px; height:80px; background:var(--gradient-accent); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1rem; font-size:2rem; color:var(--gray-900);">
+                <i class="fas fa-user-plus"></i>
+              </div>
+              <h3 style="color:var(--primary); margin-bottom:0.5rem;">Create Digital Profile</h3>
+              <p style="color:var(--gray-500); margin:0;">Get your unique OEVI ID</p>
+            </div>
+            
+            <form id="regForm">
+              <div class="form-floating-custom">
+                <input type="text" id="regName" placeholder=" " required />
+                <label>Full Name</label>
+              </div>
+              <div class="form-floating-custom">
+                <input type="email" id="regEmail" placeholder=" " required />
+                <label>Email Address</label>
+              </div>
+              <div class="form-floating-custom">
+                <input type="tel" id="regPhone" placeholder=" " required />
+                <label>Phone Number</label>
+              </div>
+              <div class="row g-3">
+                <div class="col-6"><div class="form-floating-custom"><input type="text" id="regDistrict" placeholder=" " required /><label>District</label></div></div>
+                <div class="col-6"><div class="form-floating-custom"><input type="text" id="regParish" placeholder=" " required /><label>Parish</label></div></div>
+              </div>
+              <div class="form-floating-custom">
+                <input type="text" id="regVillage" placeholder=" " required />
+                <label>Village</label>
+              </div>
+              <div class="form-floating-custom">
+                <input type="date" id="regDob" placeholder=" " required />
+                <label>Date of Birth</label>
+              </div>
+              <button type="submit" class="btn btn-accent w-100 mt-3" style="padding:14px;">
+                <i class="fas fa-id-card"></i> Get My OEVI ID
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Login -->
+        <div class="col-6">
+          <div class="impact-card" style="padding:2.5rem; background:var(--gray-50);">
+            <div class="text-center mb-4">
+              <div style="width:80px; height:80px; background:var(--gradient-primary); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1rem; font-size:2rem; color:var(--white);">
+                <i class="fas fa-sign-in-alt"></i>
+              </div>
+              <h3 style="color:var(--secondary); margin-bottom:0.5rem;">Welcome Back</h3>
+              <p style="color:var(--gray-500); margin:0;">Login to access your dashboard</p>
+            </div>
+            
+            <form id="loginForm">
+              <div class="form-floating-custom">
+                <input type="email" id="loginEmail" placeholder=" " required />
+                <label>Email Address</label>
+              </div>
+              <div class="form-floating-custom">
+                <input type="password" id="loginPass" placeholder=" " />
+                <label>Password (Demo: any value)</label>
+              </div>
+              <button type="submit" class="btn btn-primary w-100 mt-3" style="padding:14px;">
+                <i class="fas fa-sign-in-alt"></i> Login to Dashboard
+              </button>
+            </form>
+            
+            <div class="text-center mt-4" style="padding:1rem; background:var(--white); border-radius:var(--radius-sm);">
+              <p style="color:var(--gray-600); font-size:0.9rem; margin:0;">
+                <i class="fas fa-info-circle me-2" style="color:var(--accent);"></i>
+                Your OEVI ID is generated automatically upon registration.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 OEVI Digital Management System. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    document.getElementById('regForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const data = {
+        name: document.getElementById('regName').value,
+        email: document.getElementById('regEmail').value,
+        phone: document.getElementById('regPhone').value,
+        district: document.getElementById('regDistrict').value,
+        parish: document.getElementById('regParish').value,
+        village: document.getElementById('regVillage').value,
+        dob: document.getElementById('regDob').value
+      };
+      const result = OEVISystem.register(data);
+      if (result.success) {
+        alert("Success! Your OEVI ID: " + OEVISystem.db.currentUser.id);
+        window.location.href = 'dashboard.html';
+      } else {
+        alert(result.message);
+      }
+    });
+
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      OEVISystem.login(document.getElementById('loginEmail').value, "demo");
+    });
+  </script>
+</body>
+</html>

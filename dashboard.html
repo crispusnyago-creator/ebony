@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Dashboard — OEVI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+<body>
+
+  <!-- UNIFIED HEADER -->
+  <header class="site-header scrolled" id="siteHeader">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">OE<span>VI</span></a>
+        <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+        <div class="nav-menu" id="navMenu">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="programs.html" class="nav-link">Programs</a></li>
+            <li><a href="impact.html" class="nav-link">Impact</a></li>
+            <li><a href="news.html" class="nav-link">News</a></li>
+            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+          <div class="nav-actions">
+            <a href="programs.html" class="btn btn-outline-light"><i class="fas fa-th-large"></i> Programs</a>
+            <a href="#" onclick="OEVISystem.logout()" class="btn btn-donate"><i class="fas fa-sign-out-alt"></i> Logout</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="page-hero" style="--hero-bg: url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1920&q=80');">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-3" style="text-align:center;">
+          <div style="width:120px; height:120px; background:var(--accent); border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:3rem; color:var(--gray-900); box-shadow: 0 10px 30px rgba(245,158,11,0.4);">
+            <i class="fas fa-user"></i>
+          </div>
+        </div>
+        <div class="col-9">
+          <h2 style="color:var(--white); margin-bottom:0.5rem;">Welcome, <span id="userName">User</span></h2>
+          <p style="color:rgba(255,255,255,0.9); margin:0;">Your Digital Citizen Profile is active.</p>
+          <div class="mt-3">
+            <span class="hero-tag"><i class="fas fa-id-badge me-2"></i> OEVI ID: <strong id="oeviId" style="color:var(--accent);">Loading...</strong></span>
+            <span class="hero-tag"><i class="fas fa-check-circle me-2"></i> Status: <span id="userStatus">Verified</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="section" style="padding-top:0; margin-top:-40px;">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-3">
+          <div class="impact-card text-center" style="padding:2rem; background:var(--primary); color:var(--white); border:none;">
+            <div style="font-size:2rem; margin-bottom:0.5rem;"><i class="fas fa-file-alt"></i></div>
+            <h3 style="color:var(--white); margin:0; font-size:2.5rem;" id="statTotal">0</h3>
+            <div style="opacity:0.9; font-size:0.9rem;">Total Applications</div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="impact-card text-center" style="padding:2rem; background:var(--success); color:var(--white); border:none;">
+            <div style="font-size:2rem; margin-bottom:0.5rem;"><i class="fas fa-check-circle"></i></div>
+            <h3 style="color:var(--white); margin:0; font-size:2.5rem;" id="statApproved">0</h3>
+            <div style="opacity:0.9; font-size:0.9rem;">Approved</div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="impact-card text-center" style="padding:2rem; background:var(--accent); color:var(--gray-900); border:none;">
+            <div style="font-size:2rem; margin-bottom:0.5rem;"><i class="fas fa-clock"></i></div>
+            <h3 style="color:var(--gray-900); margin:0; font-size:2.5rem;" id="statPending">0</h3>
+            <div style="opacity:0.9; font-size:0.9rem;">Pending</div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="impact-card text-center" style="padding:2rem;">
+            <a href="programs.html" class="btn btn-primary w-100" style="padding:14px;">
+              <i class="fas fa-th-large"></i> Browse Programs
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATIONS -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag">My History</span>
+        <h2 class="section-title">Application Timeline</h2>
+      </div>
+
+      <div id="applicationsList">
+        <div class="impact-card text-center" style="padding:3rem;">
+          <div style="width:80px; height:80px; background:var(--gray-100); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1rem; font-size:2rem; color:var(--gray-400);">
+            <i class="fas fa-inbox"></i>
+          </div>
+          <h4 style="color:var(--gray-700); margin-bottom:0.5rem;">No Applications Yet</h4>
+          <p style="color:var(--gray-500); margin-bottom:1.5rem;">Start by browsing our programs.</p>
+          <a href="programs.html" class="btn btn-primary"><i class="fas fa-th-large"></i> Browse Programs</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFILE -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag">Personal Information</span>
+        <h2 class="section-title">My Profile</h2>
+      </div>
+      <div class="row g-4 mt-3 justify-content-center">
+        <div class="col-6">
+          <div class="impact-card">
+            <h4 style="margin-bottom:1.5rem; color:var(--primary);"><i class="fas fa-map-marker-alt me-2"></i> Location Details</h4>
+            <div class="row g-3">
+              <div class="col-6">
+                <label style="color:var(--gray-500); font-size:0.8rem; font-weight:600; display:block; margin-bottom:0.25rem;">DISTRICT</label>
+                <p id="profDistrict" style="margin:0; font-weight:600; color:var(--gray-900);">-</p>
+              </div>
+              <div class="col-6">
+                <label style="color:var(--gray-500); font-size:0.8rem; font-weight:600; display:block; margin-bottom:0.25rem;">PARISH</label>
+                <p id="profParish" style="margin:0; font-weight:600; color:var(--gray-900);">-</p>
+              </div>
+              <div class="col-6">
+                <label style="color:var(--gray-500); font-size:0.8rem; font-weight:600; display:block; margin-bottom:0.25rem;">VILLAGE</label>
+                <p id="profVillage" style="margin:0; font-weight:600; color:var(--gray-900);">-</p>
+              </div>
+              <div class="col-6">
+                <label style="color:var(--gray-500); font-size:0.8rem; font-weight:600; display:block; margin-bottom:0.25rem;">PHONE</label>
+                <p id="profPhone" style="margin:0; font-weight:600; color:var(--gray-900);">-</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 OEVI Digital Management System.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    if (!OEVISystem.db.currentUser) {
+      window.location.href = 'auth.html';
+    } else {
+      const u = OEVISystem.db.currentUser;
+      document.getElementById('userName').textContent = u.name;
+      document.getElementById('oeviId').textContent = u.id;
+      
+      const stats = OEVISystem.getStats();
+      document.getElementById('statTotal').textContent = stats.total;
+      document.getElementById('statApproved').textContent = stats.approved;
+      document.getElementById('statPending').textContent = stats.pending;
+
+      document.getElementById('profDistrict').textContent = u.district;
+      document.getElementById('profParish').textContent = u.parish;
+      document.getElementById('profVillage').textContent = u.village;
+      document.getElementById('profPhone').textContent = u.phone;
+
+      const list = document.getElementById('applicationsList');
+      if (u.applications && u.applications.length > 0) {
+        list.innerHTML = '';
+        u.applications.forEach(app => {
+          const statusColor = app.status === "Approved" ? "var(--success)" : "var(--accent)";
+          const statusIcon = app.status === "Approved" ? "fa-check-circle" : "fa-clock";
+          list.innerHTML += `
+            <div class="impact-card mb-3" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+              <div>
+                <h4 style="margin:0; color:var(--primary);">${app.program}</h4>
+                <p style="margin:0; font-size:0.85rem; color:var(--gray-500);">ID: ${app.id} • Applied: ${app.date}</p>
+              </div>
+              <span style="background:${statusColor}; color:#fff; padding:8px 20px; border-radius:50px; font-weight:600; font-size:0.85rem; display:inline-flex; align-items:center; gap:8px;">
+                <i class="fas ${statusIcon}"></i> ${app.status}
+              </span>
+            </div>
+          `;
+        });
+      }
+    }
+  </script>
+</body>
+</html>

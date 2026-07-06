@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get Involved — OEVI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+<body>
+
+  <div class="reading-progress" id="readingProgress"></div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">OE<span>VI</span></a>
+        <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+        <div class="nav-menu" id="navMenu">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="programs.html" class="nav-link">Programs</a></li>
+            <li><a href="impact.html" class="nav-link">Impact</a></li>
+            <li><a href="news.html" class="nav-link">News</a></li>
+            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+          <div class="nav-actions">
+            <a href="donate.html" class="btn btn-donate"><i class="fas fa-heart"></i> Donate</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero" style="--hero-bg: url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1920&q=80');">
+    <div class="container">
+      <div class="breadcrumb-custom" data-aos="fade-down">
+        <a href="index.html">Home</a>
+        <i class="fas fa-chevron-right"></i>
+        <span>Get Involved</span>
+      </div>
+      <h1 data-aos="fade-up">Join the <span>Movement</span></h1>
+      <p class="lead" data-aos="fade-up" data-aos-delay="100">Your time, talent, or treasure can transform lives. Choose how you want to make a difference.</p>
+    </div>
+  </section>
+
+  <!-- Ways to Help -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header text-center" data-aos="fade-up">
+        <span class="section-tag">Ways to Help</span>
+        <h2 class="section-title">Make Your Mark</h2>
+      </div>
+      <div class="row g-4 mt-3">
+        <div class="col-6" data-aos="fade-up">
+          <div class="impact-card">
+            <div class="impact-icon"><i class="fas fa-hand-holding-heart"></i></div>
+            <h4>Volunteer</h4>
+            <p>Lend your skills and time to our programs — on-site or remotely.</p>
+            <a href="#volunteer-form" class="btn btn-outline-primary mt-2">Apply Now <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="impact-card">
+            <div class="impact-icon"><i class="fas fa-donate"></i></div>
+            <h4>Donate</h4>
+            <p>Every contribution directly funds life-changing programs across Africa.</p>
+            <a href="donate.html" class="btn btn-primary mt-2">Donate Now <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="impact-card">
+            <div class="impact-icon"><i class="fas fa-briefcase"></i></div>
+            <h4>Careers</h4>
+            <p>Build a meaningful career with a purpose-driven international NGO.</p>
+            <a href="#" class="btn btn-outline-primary mt-2">View Openings <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="impact-card">
+            <div class="impact-icon"><i class="fas fa-handshake"></i></div>
+            <h4>Corporate Partnerships</h4>
+            <p>Align your brand with measurable impact and shared values.</p>
+            <a href="partners.html" class="btn btn-outline-primary mt-2">Partner With Us <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-6" data-aos="fade-up">
+          <div class="impact-card">
+            <div class="impact-icon"><i class="fas fa-user-graduate"></i></div>
+            <h4>Internships</h4>
+            <p>Gain hands-on experience in international development.</p>
+            <a href="#" class="btn btn-outline-primary mt-2">Apply <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="impact-card">
+            <div class="impact-icon"><i class="fas fa-users"></i></div>
+            <h4>Membership</h4>
+            <p>Join our community of supporters and stay connected to our mission.</p>
+            <a href="#" class="btn btn-outline-primary mt-2">Become a Member <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Volunteer Form -->
+  <section id="volunteer-form" class="section bg-light">
+    <div class="container">
+      <div class="section-header text-center" data-aos="fade-up">
+        <span class="section-tag">Volunteer Application</span>
+        <h2 class="section-title">Apply to Volunteer</h2>
+        <p class="section-subtitle">Fill out the form below and our team will get back to you within 5 business days.</p>
+      </div>
+
+      <div style="max-width:700px; margin:0 auto;">
+        <div class="stepper" data-aos="fade-up">
+          <div class="step active" data-step="1"><div class="step-circle">1</div><div class="step-label">Personal</div></div>
+          <div class="step" data-step="2"><div class="step-circle">2</div><div class="step-label">Skills</div></div>
+          <div class="step" data-step="3"><div class="step-circle">3</div><div class="step-label">Availability</div></div>
+          <div class="step" data-step="4"><div class="step-circle">4</div><div class="step-label">Review</div></div>
+        </div>
+
+        <form id="volunteerForm" data-aos="fade-up" onsubmit="event.preventDefault(); alert('Application submitted!');">
+          <div class="form-step" data-step="1">
+            <div class="row g-3">
+              <div class="col-6"><div class="form-floating-custom"><input type="text" placeholder=" " required /><label>First Name</label></div></div>
+              <div class="col-6"><div class="form-floating-custom"><input type="text" placeholder=" " required /><label>Last Name</label></div></div>
+              <div class="col-6"><div class="form-floating-custom"><input type="email" placeholder=" " required /><label>Email</label></div></div>
+              <div class="col-6"><div class="form-floating-custom"><input type="tel" placeholder=" " required /><label>Phone</label></div></div>
+              <div class="col-12"><div class="form-floating-custom"><input type="text" placeholder=" " required /><label>Country</label></div></div>
+            </div>
+            <div class="text-center mt-4"><button type="button" class="btn btn-primary next-step">Next <i class="fas fa-arrow-right"></i></button></div>
+          </div>
+
+          <div class="form-step" data-step="2" style="display:none;">
+            <div class="form-floating-custom"><input type="text" placeholder=" " /><label>Professional Background</label></div>
+            <div class="form-floating-custom">
+              <select required>
+                <option value="">Select area of interest</option>
+                <option>Healthcare</option>
+                <option>Education</option>
+                <option>Agriculture</option>
+                <option>Environment</option>
+              </select>
+            </div>
+            <div class="form-floating-custom"><textarea placeholder=" " rows="4"></textarea><label>Relevant Skills</label></div>
+            <div class="d-flex justify-content-between mt-4">
+              <button type="button" class="btn btn-outline-primary prev-step"><i class="fas fa-arrow-left"></i> Back</button>
+              <button type="button" class="btn btn-primary next-step">Next <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+
+          <div class="form-step" data-step="3" style="display:none;">
+            <div class="form-floating-custom">
+              <select required>
+                <option value="">Select availability</option>
+                <option>Full-time (3+ months)</option>
+                <option>Part-time (ongoing)</option>
+                <option>Short-term (1-3 months)</option>
+                <option>Remote only</option>
+              </select>
+            </div>
+            <div class="form-floating-custom"><textarea placeholder=" " rows="4"></textarea><label>Why do you want to volunteer?</label></div>
+            <div class="d-flex justify-content-between mt-4">
+              <button type="button" class="btn btn-outline-primary prev-step"><i class="fas fa-arrow-left"></i> Back</button>
+              <button type="button" class="btn btn-primary next-step">Next <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+
+          <div class="form-step" data-step="4" style="display:none;">
+            <div class="impact-card text-center" style="padding:3rem;">
+              <div class="impact-icon" style="margin:0 auto 1.5rem;"><i class="fas fa-check"></i></div>
+              <h4>Ready to Submit</h4>
+              <p>Please review your information and submit your application.</p>
+            </div>
+            <div class="d-flex justify-content-between mt-4">
+              <button type="button" class="btn btn-outline-primary prev-step"><i class="fas fa-arrow-left"></i> Back</button>
+              <button type="submit" class="btn btn-accent">Submit Application <i class="fas fa-paper-plane"></i></button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Stories -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header text-center" data-aos="fade-up">
+        <span class="section-tag">Volunteer Stories</span>
+        <h2 class="section-title">Voices of Our Volunteers</h2>
+      </div>
+      <div class="row g-4 mt-3">
+        <div class="col-6" data-aos="fade-up">
+          <div class="impact-card">
+            <div class="impact-icon"><i class="fas fa-quote-left"></i></div>
+            <p>"Volunteering with OEVI was the most meaningful experience of my life."</p>
+            <div class="d-flex align-items-center gap-3 mt-4">
+              <img src="https://i.pravatar.cc/60?img=32" style="width:48px; height:48px; border-radius:50%;" alt="" />
+              <div><strong>Sarah L.</strong><br/><small style="color:var(--gray-500);">Medical Volunteer, UK</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="impact-card">
+            <div class="impact-icon"><i class="fas fa-quote-left"></i></div>
+            <p>"The OEVI team welcomed me like family. Together we built a school."</p>
+            <div class="d-flex align-items-center gap-3 mt-4">
+              <img src="https://i.pravatar.cc/60?img=15" style="width:48px; height:48px; border-radius:50%;" alt="" />
+              <div><strong>Marcus T.</strong><br/><small style="color:var(--gray-500);">Construction Volunteer, Canada</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="footer-logo">OE<span>VI</span></a>
+          <p>Empowering communities through sustainable programs.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="impact.html">Impact</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="programs.html#health">Healthcare</a></li>
+            <li><a href="programs.html#education">Education</a></li>
+            <li><a href="programs.html#agriculture">Agriculture</a></li>
+            <li><a href="programs.html#environment">Environment</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get In Touch</h4>
+          <ul class="footer-contact list-unstyled">
+            <li><i class="fas fa-map-marker-alt"></i><span>123 Community Ave, Nairobi</span></li>
+            <li><i class="fas fa-phone"></i><span>+254 700 123 456</span></li>
+            <li><i class="fas fa-envelope"></i><span>hello@oevi.org</span></li>
+          </ul>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email" required />
+            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 OEVI. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
